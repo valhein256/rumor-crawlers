@@ -1,0 +1,15 @@
+.vscode/
+__pycache__/
+.pytest_cache/
+.DS_Store
+*.pyc
+*.swp
+*.swo
+
+# Test binary, built with `go test -c`
+*.test
+.coverage
+linting/
+reports/
+config/
+

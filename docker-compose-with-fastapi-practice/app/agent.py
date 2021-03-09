@@ -2,7 +2,7 @@ from fastapi import FastAPI, Request, status
 from fastapi.responses import JSONResponse
 
 from .utils.exceptions import Exceptions
-from .utils.datatypes import RequestItem, ResponseItem, TextBlock
+from .utils.datatypes import RequestItem, ResponseItem
 from .utils.logger import init_logging
 from .utils.settings import Settings
 
@@ -18,7 +18,7 @@ app = FastAPI(title="Optical Character Recognition (OCR) and Speech Recognition 
 
 
 @app.exception_handler(Exceptions.UnprocessableEntity)
-async def handle_unsupported_document(request: Request, ex: Exceptions.UnprocessableEntity):
+async def handle_unprocessable_entity(request: Request, ex: Exceptions.UnprocessableEntity):
     return JSONResponse(content={"text": "", "confidence": 0.0, "error": str(ex)},
                         status_code=status.HTTP_422_UNPROCESSABLE_ENTITY)
 

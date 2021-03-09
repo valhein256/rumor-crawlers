@@ -61,7 +61,7 @@ lint:
 	@docker run \
 		-v ${PWD}:/opt/app \
 		--rm ${SERVICE}-develop \
-		flake8 **/*.py
+		flake8 **/*.py 
 
 update:
 	@docker run \

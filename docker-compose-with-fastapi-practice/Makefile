@@ -1,6 +1,6 @@
 SERVICE := py-env-builder
 DEFAULT_APP := bin/main.py
-CONFIGFILE := trendmicro-check-289104-1478dd8db8a0.json
+CONFIGFILE := config
 
 ifndef app
 	APP := ${DEFAULT_APP}

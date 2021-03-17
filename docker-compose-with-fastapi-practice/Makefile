@@ -8,7 +8,7 @@ else
 	APP := $(app)
 endif
 
-.PHONY: config build launch stop run devenv test lint update
+.PHONY: config build launch compose stop run devenv test lint update
 
 config:
 	@echo "Download config file..."
@@ -23,9 +23,22 @@ build:
 		--target develop -t ${SERVICE}-develop
 
 launch:
+	@echo "Launch service..."
+	@docker run \
+		-p 8002:8000 \
+		-e STAGE=dev \
+		-v ${PWD}:/opt/app \
+		--rm ${SERVICE} \
+		gunicorn app.agent:app -w 2 -k uvicorn.workers.UvicornWorker \
+		--timeout 30 -b 0.0.0.0:8000 --limit-request-line 0 \
+		--limit-request-field_size 0 --log-level debug
+
+compose:
+	@echo "Launch service by compose..."
 	@docker-compose up -d --build
 
 stop:
+	@echo "Stop service..."
 	@docker-compose stop
 
 run:

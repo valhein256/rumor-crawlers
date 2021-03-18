@@ -2,24 +2,15 @@ from pydantic import BaseSettings
 
 
 class Settings(BaseSettings):
-    info_log:
-        str
-    warn_log:
-        str
-    error_log:
-        str
-    result_bucket:
-        str
-    cache_bucket:
-        str
-    openapi_url:
-        str = None
-    docs_url:
-        str = None
-    redoc_url:
-        str = None
-    isdebug:
-        bool = False
+    info_log: str
+    warn_log: str
+    error_log: str
+    result_bucket: str
+    cache_bucket: str
+    openapi_url: str = None
+    docs_url: str = None
+    redoc_url: str = None
+    isdebug: bool = False
 
     # @validator('sr_engine')
     # def google_credential_exists(cls, v, values):

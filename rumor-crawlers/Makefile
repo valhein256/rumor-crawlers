@@ -8,10 +8,16 @@ else
 	APP := $(app)
 endif
 
-ifndef end_date
+ifndef update
+	UPDATE := false
+else
+	UPDATE := $(update)
+endif
+
+ifndef date
 	DATE := ''
 else
-	DATE := $(end_date)
+	DATE := $(date)
 endif
 
 ifndef stage
@@ -56,6 +62,7 @@ stop:
 
 run:
 	@echo "Run app: ${APP}"
+ifeq ($(UPDATE), false)
 	@docker run \
 		-e STAGE=${STAGE} \
 		-e AWS_ACCESS_KEY_ID=$(AWS_ACCESS_KEY_ID) \
@@ -65,6 +72,18 @@ run:
 		-v ${PWD}:/opt/app \
 		--rm ${SERVICE} \
 		python ${APP} -d ${DATE}
+else
+	@docker run \
+		-e STAGE=${STAGE} \
+		-e AWS_ACCESS_KEY_ID=$(AWS_ACCESS_KEY_ID) \
+		-e AWS_SECRET_ACCESS_KEY=$(AWS_SECRET_ACCESS_KEY) \
+		-e AWS_SESSION_TOKEN=$(AWS_SESSION_TOKEN) \
+		-e AWS_SECURITY_TOKE=$(AWS_SECURITY_TOKEN) \
+		-v ${PWD}:/opt/app \
+		--rm ${SERVICE} \
+		python ${APP} -d ${DATE} --update
+endif
+	
 
 devenv:
 	@docker run \

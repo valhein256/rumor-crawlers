@@ -146,10 +146,12 @@ class CdcCrawler():
                     for div in div_objs:
                         rumor_date = extract_rumor_date(div)
                         if datetime.strptime(rumor_date, "%Y-%m-%d") >= date:
+                            rumor_info = dict()
                             rumor_path = extract_rumor_path(div)
-                            rumor_original_title = extract_title(div)
-                            rumor_url = f"{self.domain}{rumor_path}"
-                            rumor_infos.append((rumor_url, rumor_date, rumor_original_title))
+                            rumor_info["link"] = f"{self.domain}{rumor_path}"
+                            rumor_info["date"] = rumor_date
+                            rumor_info["original_title"] = extract_title(div)
+                            rumor_infos.append(rumor_info)
                         else:
                             done = True
                             break
@@ -166,23 +168,22 @@ class CdcCrawler():
 
     def parse_rumor_content(self, rumor_info):
         try:
-            (url, date, original_title) = rumor_info
-            html_content = self.query(url)
+            html_content = self.query(rumor_info["link"])
             html_soup = BeautifulSoup(html_content, 'lxml')
 
             clarification = extract_clarification(html_soup)
-            title = remove_redundant_word(original_title)
+            title = remove_redundant_word(rumor_info["original_title"])
 
             posted_item = {
-                "id": gen_id(url),
+                "id": gen_id(rumor_info["link"]),
                 "clarification": clarification,
-                "create_date": date,
+                "create_date": rumor_info["date"],
                 "title": title,
-                "original_title": original_title,
+                "original_title": rumor_info["original_title"],
                 "rumors": [
                     title,
                 ],
-                "link": url,
+                "link": rumor_info["link"],
                 "source": self.source
             }
             logger.info("CDC rumor item: {}".format(posted_item))

@@ -146,9 +146,11 @@ class FdaCrawler():
                 for tr in tr_objs:
                     rumor_date = extract_rumor_date(tr)
                     if datetime.strptime(rumor_date, "%Y-%m-%d") >= date:
+                        rumor_info = dict()
                         rumor_path = extract_rumor_path(tr)
-                        rumor_url = f"{self.rumor_url}/{rumor_path}"
-                        rumor_infos.append((rumor_url, rumor_date))
+                        rumor_info["link"] = f"{self.rumor_url}/{rumor_path}"
+                        rumor_info["date"] = rumor_date
+                        rumor_infos.append(rumor_info)
                     else:
                         done = True
                         break
@@ -163,8 +165,7 @@ class FdaCrawler():
 
     def parse_rumor_content(self, rumor_info):
         try:
-            (url, date) = rumor_info
-            html_content = self.query(url)
+            html_content = self.query(rumor_info["link"])
             html_soup = BeautifulSoup(html_content, 'lxml')
 
             clarification = extract_clarification(html_soup)
@@ -172,15 +173,15 @@ class FdaCrawler():
             title = remove_redundant_word(original_title)
 
             posted_item = {
-                "id": gen_id(url),
+                "id": gen_id(rumor_info["link"]),
                 "clarification": clarification,
-                "create_date": date,
+                "create_date": rumor_info["date"],
                 "title": title,
                 "original_title": original_title,
                 "rumors": [
                     title,
                 ],
-                "link": url,
+                "link": rumor_info["link"],
                 "source": self.source
             }
             logger.info("FDA rumor item: {}".format(posted_item))

@@ -270,7 +270,7 @@ class MygopenCrawler():
                 "link": rumor_info["link"],
                 "source": self.source
             }
-            # logger.info("Mygopen rumor item with link: {}".format(posted_item["link"]))
+            logger.info("Mygopen rumor item with link: {}".format(posted_item["link"]))
             return posted_item
 
         except Exception:

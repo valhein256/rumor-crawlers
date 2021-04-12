@@ -262,11 +262,17 @@ class TfcCrawler():
                 if div_objs:
                     for div in div_objs:
                         rumor_date = extract_rumor_date(div)
-                        if datetime.strptime(rumor_date, "%Y-%m-%d") >= date:
-                            rumor_img = extract_rumor_img(div)
-                            rumor_path = extract_rumor_path(div)
-                            rumor_url = f"{self.domain}{rumor_path}"
-                            rumor_infos.append((rumor_url, rumor_date, rumor_img))
+                        if rumor_date:
+                            if datetime.strptime(rumor_date, "%Y-%m-%d") >= date:
+                                rumor_info = dict()
+                                rumor_path = extract_rumor_path(div)
+                                rumor_info["link"] = f"{self.domain}{rumor_path}"
+                                rumor_info["date"] = rumor_date
+                                rumor_info["img"] = extract_rumor_img(div)
+                                rumor_infos.append(rumor_info)
+                            else:
+                                done = True
+                                break
                         else:
                             done = True
                             break
@@ -283,8 +289,7 @@ class TfcCrawler():
 
     def parse_rumor_content(self, rumor_info):
         try:
-            (url, date, img) = rumor_info
-            html_content = self.query(url)
+            html_content = self.query(rumor_info["link"])
             html_soup = BeautifulSoup(html_content, 'lxml')
 
             clarification, rumor = extract_clarification_and_rumor(html_soup)
@@ -294,10 +299,10 @@ class TfcCrawler():
             title = remove_redundant_word(original_title)
 
             posted_item = {
-                "id": gen_id(url),
+                "id": gen_id(rumor_info["link"]),
                 "clarification": clarification,
-                "image_link": img,
-                "create_date": date,
+                "image_link": rumor_info["img"],
+                "create_date": rumor_info["date"],
                 "title": title,
                 "original_title": original_title,
                 "rumors": [
@@ -305,7 +310,7 @@ class TfcCrawler():
                 ],
                 "preface": preface,
                 "tags": tags,
-                "link": url,
+                "link": rumor_info["link"],
                 "source": self.source
             }
             logger.info("TFC rumor item: {}".format(posted_item))

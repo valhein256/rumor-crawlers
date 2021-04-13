@@ -214,7 +214,7 @@ class MygopenCrawler():
                         if rumor_info not in rumor_infos:
                             rumor_infos.append(rumor_info)
 
-                logger.info("date: {}, rumor_infos: {}".format(date, rumor_infos))
+                # logger.info("date: {}, rumor_infos: {}".format(date, rumor_infos))
                 return rumor_infos
 
             except Exception:

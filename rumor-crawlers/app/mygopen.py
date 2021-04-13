@@ -13,10 +13,13 @@ setting = Settings(_env_file='config/env')
 init_logging(setting)
 
 parser = argparse.ArgumentParser()
-parser.add_argument("-d", "--date", dest='date', help="To crawler content with date", default=None, type=str)
-parser.add_argument("-u", "--update", dest='update', help="To update rumor content by re-crawlering", default=False, type=bool)
+parser.add_argument("-d", "--date", help="To crawler content from date", default=None, type=str)
+parser.add_argument("-u", "--update", help="To update rumor content by re-crawlering", default=False, type=bool, action=argparse.BooleanOptionalAction)
 args = parser.parse_args()
 
+_NEW_RUMOR = 0
+_OLD_RUMOR = 1
+_FAILED    = 2
 
 def parsing_work(crawler, rumor_info):
     try:
@@ -40,14 +43,14 @@ def parsing_work(crawler, rumor_info):
                                     source=posted_item['source'])
             logger.info("Add rumor_item with id {}, link {} to rumor ddb table.".format(rumor_item.id, rumor_item.link))
             rumor_item.save()
-            return (True, rumor_info)
+            return (_NEW_RUMOR, rumor_info)
         else:
-            return (False, rumor_info)
+            return (_OLD_RUMOR, rumor_info)
 
     except Exception:
         msg = traceback.format_exc()
         logger.error(f"Error: {msg}")
-        return (False, None)
+        return (_FAILED, rumor_info)
 
 
 def main():
@@ -65,8 +68,9 @@ def main():
         rumor_infos = mygopen.parse_rumor_pages(latest_create_date)
         rumor_infos = sorted(rumor_infos, key=lambda k: k['date'])
 
-        saved_rumor = list()
-        no_saved_rumor = list()
+        saved_new_rumor = list()
+        no_saved_old_rumor = list()
+        save_failed_rumor = list()
         with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
             works = []
             for rumor_info in rumor_infos:
@@ -74,17 +78,20 @@ def main():
                 works.append(future)
 
         for work in works:
-            (success, rumor_info) = work.result()
-            if success:
-                saved_rumor.append(rumor_info)
+            (_type, rumor_info) = work.result()
+            if _type == _NEW_RUMOR:
+                saved_new_rumor.append(rumor_info)
+            elif _type == _OLD_RUMOR:
+                no_saved_old_rumor.append(rumor_info)
             else:
-                no_saved_rumor.append(rumor_info)
+                save_failed_rumor.append(rumor_info)
 
-        logger.info("no_saved_rumor: {}".format(no_saved_rumor))
-        logger.info("Mygopen Crawler date: {}".format(latest_create_date))
-        logger.info("Mygopen Crawler rumor_infos number: {}".format(len(rumor_infos)))
-        logger.info("Number of no_saved_rumor: {}".format(len(no_saved_rumor)))
-        logger.info("Number of saved_rumor: {}".format(len(saved_rumor)))
+        logger.info("MYGOPEN Crawler start date: {}".format(latest_create_date))
+        logger.info("Number of MYGOPEN Crawler rumor_infos: {}".format(len(rumor_infos)))
+        logger.info("Number of saved_new_rumor: {}".format(len(saved_new_rumor)))
+        logger.info("Number of no_saved_old_rumor: {}".format(len(no_saved_old_rumor)))
+        logger.info("Number of save_failed_rumor: {}".format(len(save_failed_rumor)))
+        logger.info("save_failed_rumor: {}".format(save_failed_rumor))
 
     except Exception:
         msg = traceback.format_exc()

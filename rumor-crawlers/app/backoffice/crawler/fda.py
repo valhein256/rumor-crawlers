@@ -131,7 +131,6 @@ class FdaCrawler():
             html_soup = BeautifulSoup(html_content, 'lxml')
             page_objs = html_soup.find_all('span', attrs={"class": "pageHighlight"})
             max_page_num = int(page_objs[-1].text)
-            logger.info("FDA page number of total rumor case: {}".format(max_page_num))
 
             rumor_infos = []
             done = False

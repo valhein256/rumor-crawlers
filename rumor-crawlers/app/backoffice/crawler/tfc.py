@@ -41,8 +41,8 @@ def extract_rumor_id(content_soup):
 
 def extract_rumor_path(content_soup):
     try:
-        left_pane_obj = content_soup.find(class_="left-pane")
-        link_obj = left_pane_obj.find("a")
+        entity_list_title_obj = content_soup.find(class_="entity-list-title")
+        link_obj = entity_list_title_obj.find("a")
         content = link_obj.attrs['href']
         return content
     except Exception:
@@ -54,9 +54,12 @@ def extract_rumor_path(content_soup):
 def extract_rumor_date(content_soup):
     try:
         div_date = content_soup.find('div', attrs={"class": "post-date"})
-        match = re.search(r'\d{4}-\d{2}-\d{2}', div_date.text)
-        rumor_date = match.group()
-        return rumor_date
+        if div_date:
+            match = re.search(r'\d{4}-\d{2}-\d{2}', div_date.text)
+            rumor_date = match.group()
+            return rumor_date
+        else:
+            return None
     except Exception:
         msg = traceback.format_exc()
         logger.error(f"Error: {msg}")
@@ -65,8 +68,11 @@ def extract_rumor_date(content_soup):
 
 def extract_rumor_img(content_soup):
     try:
-        img = content_soup.find("img").get("src")
-        return img
+        img_obj = content_soup.find("img")
+        if img_obj:
+            return img_obj.get("src")
+        else:
+            return None
     except Exception:
         msg = traceback.format_exc()
         logger.error(f"Error: {msg}")
@@ -255,7 +261,6 @@ class TfcCrawler():
             rumor_date = None
             while not done:
                 url = f"{self.page_url}?page={pn}"
-                print(pn, url, len(rumor_infos), date, rumor_date)
                 html_content = self.query(url)
                 html_soup = BeautifulSoup(html_content, 'lxml')
                 div_objs = html_soup.find(class_="view-content").find_all(class_="views-row")

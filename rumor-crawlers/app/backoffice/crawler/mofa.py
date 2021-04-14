@@ -130,7 +130,6 @@ class MofaCrawler():
             pn = 1
             while not done:
                 url = f"{self.page_url}&page={pn}&PageSize=20"
-                print(pn, url)
                 html_content = self.query(url)
                 html_soup = BeautifulSoup(html_content, 'lxml')
                 tbody_soup = html_soup.find('tbody')

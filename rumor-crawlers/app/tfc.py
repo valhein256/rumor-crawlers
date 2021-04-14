@@ -2,8 +2,8 @@ import argparse
 import traceback
 import concurrent.futures
 
-from datetime import datetime
 from backoffice.crawler.tfc import TfcCrawler
+from utils.crawler import _NEW_RUMOR, _OLD_RUMOR, _FAILED, fetch_latest_create_date_of_rumor
 from utils.logger import init_logging, logger
 from utils.settings import Settings
 from models.aws.ddb.rumor_model import RumorModel
@@ -17,9 +17,6 @@ parser.add_argument("-d", "--date", help="To crawler content from date", default
 parser.add_argument("-u", "--update", help="To update rumor content by re-crawlering", default=False, type=bool, action=argparse.BooleanOptionalAction)
 args = parser.parse_args()
 
-_NEW_RUMOR = 0
-_OLD_RUMOR = 1
-_FAILED    = 2
 
 def parsing_work(crawler, rumor_info):
     try:
@@ -34,11 +31,14 @@ def parsing_work(crawler, rumor_info):
             posted_item = crawler.parse_rumor_content(rumor_info)
             rumor_item = RumorModel(id=posted_item['id'],
                                     clarification=posted_item['clarification'],
-                                    title=posted_item['title'],
                                     create_date=posted_item['create_date'],
+                                    title=posted_item['title'],
                                     original_title=posted_item['original_title'],
-                                    link=posted_item['link'],
                                     rumors=posted_item['rumors'],
+                                    preface=posted_item['preface'],
+                                    tags=posted_item['tags'],
+                                    image_link=posted_item['image_link'],
+                                    link=posted_item['link'],
                                     source=posted_item['source'])
             logger.info("Add rumor_item with id {}, link {} to rumor ddb table.".format(rumor_item.id, rumor_item.link))
             rumor_item.save()
@@ -55,14 +55,7 @@ def parsing_work(crawler, rumor_info):
 def main():
     try:
         tfc = TfcCrawler(setting)
-        if not args.date:
-            rumor_date = tfc.fetch_latest_create_date_of_rumor()
-            if rumor_date:
-                latest_create_date = datetime.strptime(rumor_date, "%Y-%m-%d")
-            else:
-                latest_create_date = datetime.strptime("2000-01-01", "%Y-%m-%d")
-        else:
-            latest_create_date = datetime.strptime(args.date, "%Y-%m-%d")
+        latest_create_date = fetch_latest_create_date_of_rumor(tfc.source, args.date)
         rumor_infos = tfc.parse_rumor_pages(latest_create_date)
         rumor_infos = sorted(rumor_infos, key=lambda k: k['date'])
 

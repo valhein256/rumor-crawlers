@@ -83,7 +83,7 @@ def extract_clarification_and_rumor(content_soup):
     try:
         # clarification & rumor
         obj_list = content_soup.find(class_="field-type-text-with-summary")
-        allP = obj_list.find_all(['p', 'h2'])
+        allP = obj_list.find_all(['p', 'h2', 'strong'])
 
         rumor_list = []
         clarification_list = []
@@ -91,7 +91,16 @@ def extract_clarification_and_rumor(content_soup):
         startToCrawlClarification = False
         for p in allP:
             content = remove_space(p.text)
-            if p.name == 'h2':
+            if p.name == 'strong':
+                if content == '背景':
+                    startToCrawlRumor = True
+                    startToCrawlClarification = False
+                elif content == '查核':
+                    startToCrawlRumor = False
+                    startToCrawlClarification = True
+                elif content == '結論':
+                    break;
+            elif p.name == 'h2':
                 if content == '背景':
                     startToCrawlRumor = True
                     startToCrawlClarification = False
@@ -101,6 +110,10 @@ def extract_clarification_and_rumor(content_soup):
                 elif content == '結論':
                     break;
             else:
+                if content == '背景':
+                    startToCrawlRumor = True
+                    startToCrawlClarification = False
+
                 if content == '結論':
                     continue
 
@@ -112,7 +125,6 @@ def extract_clarification_and_rumor(content_soup):
 
                 if content == '補充資料':
                     break
-
                 TAG_RE = re.compile(r'^圖.*：')
                 if TAG_RE.search(content):
                     continue
@@ -146,22 +158,25 @@ def extract_preface(content_soup):
     try:
         # preface
         preface_list = content_soup.find(class_="node-preface");
-        all_preface_list = preface_list.find_all(['p'])
+        if preface_list:
+            all_preface_list = preface_list.find_all(['p'])
 
-        preface_list = []
-        for preface in all_preface_list:
-            content = remove_space(preface.text)
-            TAG_RE = re.compile(r'^經查：$|^經查$')
-            if TAG_RE.search(content):
-                continue
-            preface_list.append(content)
+            preface_list = []
+            for preface in all_preface_list:
+                content = remove_space(preface.text)
+                TAG_RE = re.compile(r'^經查：$|^經查$')
+                if TAG_RE.search(content):
+                    continue
+                preface_list.append(content)
 
 
-        if len(preface_list) == 0:
-            preface_list.append(title)
+            if len(preface_list) == 0:
+                preface_list.append(title)
 
-        preface = "".join(preface_list)
-        return preface
+            preface = "".join(preface_list)
+            return preface
+        else:
+            return None
 
     except Exception:
         msg = traceback.format_exc()
@@ -306,7 +321,6 @@ class TfcCrawler():
             posted_item = {
                 "id": gen_id(rumor_info["link"]),
                 "clarification": clarification,
-                "image_link": rumor_info["img"],
                 "create_date": rumor_info["date"],
                 "title": title,
                 "original_title": original_title,
@@ -315,6 +329,7 @@ class TfcCrawler():
                 ],
                 "preface": preface,
                 "tags": tags,
+                "image_link": rumor_info["img"],
                 "link": rumor_info["link"],
                 "source": self.source
             }

@@ -224,7 +224,7 @@ class MygopenCrawler():
 
         try:
             dates = gen_dates(date)
-            logger.info("dates: {}".format(dates))
+            logger.info("len of dates: {}".format(len(dates)))
             logger.info("dates[0]: {}".format(dates[0]))
             logger.info("dates[-1]: {}".format(dates[-1]))
             with concurrent.futures.ThreadPoolExecutor() as executor:
@@ -258,7 +258,6 @@ class MygopenCrawler():
             posted_item = {
                 "id": gen_id(rumor_info["link"]),
                 "clarification": clarification,
-                "image_link": img,
                 "create_date": rumor_info["date"],
                 "title": title,
                 "original_title": rumor_info['title'],
@@ -267,6 +266,7 @@ class MygopenCrawler():
                 ],
                 "preface": preface,
                 "tags": tags,
+                "image_link": img,
                 "link": rumor_info["link"],
                 "source": self.source
             }

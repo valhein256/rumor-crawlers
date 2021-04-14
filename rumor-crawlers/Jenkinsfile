@@ -37,7 +37,7 @@ pipeline {
                     env.STAGE = [
                         'origin/master': 'dev',
                         'origin/beta': 'beta',
-                        'origin/prod': 'prod',
+                        'origin/production': 'prod',
                     ].get(env.GIT_BRANCH, 'master')
                     env.TAG_IMAGE = "${env.SERVICE}:${env.STAGE}"
                     env.DEVELOP_IMAGE = "${env.SERVICE}:${env.STAGE}-develop"
@@ -75,7 +75,7 @@ pipeline {
         stage("Run job") {
             steps {
                 sh '''
-                    make config
+                    make config stage=${STAGE}
 
                     sudo docker run \
                     -v ${PWD}:/opt/app \

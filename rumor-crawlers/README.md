@@ -2,6 +2,7 @@
 
 Houly crawls CDC, FDA, MYGOPAN, MOFA rumor contents, and put them to rumor-ddb-table: <stage>-rumor_source.
 
+
 ## Development
 
 ### Load Config Files For Dev Local Environment
@@ -35,6 +36,8 @@ Make sure you have exported AWS access key setting via STS before run following 
 
 #### CDC
 
+Link: https://www.cdc.gov.tw/Bulletin/List/xpcl4W7tToptl-lFMjle2Q
+The Oldest Rumor Date: 2016-05-16
 To see more detail about cdc, Login local dev environment
 
 ```shell
@@ -64,6 +67,8 @@ To crawler content from date
 
 #### FDA
 
+Link: https://www.fda.gov.tw/TC/news.aspx?cid=5049
+The Oldest Rumor Date: 2015-04-27
 To see more detail about fda, Login local dev environment
 
 ```shell
@@ -93,6 +98,8 @@ To crawler content from date
 
 #### MOFA
 
+Link: https://www.mofa.gov.tw/News.aspx?n=1163&sms=214
+The Oldest Rumor Date: 2016-06-03
 To see more detail about mofa, Login local dev environment
 
 ```shell
@@ -122,6 +129,8 @@ To crawler content from date
 
 #### TFC
 
+Link: https://tfc-taiwan.org.tw/articles/report
+The Oldest Rumor Date: 2018-07-31
 To see more detail about tfc, Login local dev environment
 
 ```shell
@@ -151,6 +160,8 @@ To crawler content from date
 
 #### MYGOPEN
 
+Link: https://www.mygopen.com/
+The Oldest Rumor Date: 2015-11-25
 To see more detail about mygopen, Login local dev environment
 
 ```shell

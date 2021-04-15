@@ -1,4 +1,4 @@
-from models.aws.ddb.rumor_model import RumorModel
+from app.models.aws.ddb.rumor_model import RumorModel
 
 rumors = dict()
 for s in ["cdc", "mofa", "fda", "mygopen", "tfc"]:

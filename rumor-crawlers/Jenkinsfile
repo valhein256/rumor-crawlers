@@ -41,6 +41,7 @@ pipeline {
                     ].get(env.GIT_BRANCH, 'master')
                     env.TAG_IMAGE = "${env.SERVICE}:${env.STAGE}"
                     env.DEVELOP_IMAGE = "${env.SERVICE}:${env.STAGE}-develop"
+                    env.HOUR = sh(returnStdout: true, script: 'date +"%H"').trim().toInteger()
                 }
                 sh "printenv"
             }
@@ -74,39 +75,46 @@ pipeline {
 
         stage("Run job") {
             steps {
-                sh '''
-                    make config stage=${STAGE}
+                script {
+                    if ( HOUR == 13 ) {
+                        sh '''
+                            make config stage=${STAGE}
 
-                    sudo docker run \
-                    -v ${PWD}:/opt/app \
-                    -v /var/log/rumor-crawlers:/var/log/rumor-crawlers \
-                    --rm ${TAG_IMAGE} \
-                    python app/fda.py 
+                            sudo docker run \
+                            -v ${PWD}:/opt/app \
+                            -v /var/log/drmsg/rumor-crawlers:/var/log/drmsg/rumor-crawlers \
+                            --rm ${TAG_IMAGE} \
+                            python app/fda.py 
 
-                    sudo docker run \
-                    -v ${PWD}:/opt/app \
-                    -v /var/log/rumor-crawlers:/var/log/rumor-crawlers \
-                    --rm ${TAG_IMAGE} \
-                    python app/cdc.py 
+                            sudo docker run \
+                            -v ${PWD}:/opt/app \
+                            -v /var/log/drmsg/rumor-crawlers:/var/log/drmsg/rumor-crawlers \
+                            --rm ${TAG_IMAGE} \
+                            python app/cdc.py 
 
-                    sudo docker run \
-                    -v ${PWD}:/opt/app \
-                    -v /var/log/rumor-crawlers:/var/log/rumor-crawlers \
-                    --rm ${TAG_IMAGE} \
-                    python app/mofa.py 
+                            sudo docker run \
+                            -v ${PWD}:/opt/app \
+                            -v /var/log/drmsg/rumor-crawlers:/var/log/drmsg/rumor-crawlers \
+                            --rm ${TAG_IMAGE} \
+                            python app/mofa.py 
+                        '''
+                    }
+                    sh '''
+                        make config stage=${STAGE}
 
-                    sudo docker run \
-                    -v ${PWD}:/opt/app \
-                    -v /var/log/rumor-crawlers:/var/log/rumor-crawlers \
-                    --rm ${TAG_IMAGE} \
-                    python app/tfc.py 
+                        sudo docker run \
+                        -v ${PWD}:/opt/app \
+                        -v /var/log/drmsg/rumor-crawlers:/var/log/drmsg/rumor-crawlers \
+                        --rm ${TAG_IMAGE} \
+                        python app/tfc.py 
 
-                    sudo docker run \
-                    -v ${PWD}:/opt/app \
-                    -v /var/log/rumor-crawlers:/var/log/rumor-crawlers \
-                    --rm ${TAG_IMAGE} \
-                    python app/mygopen.py 
-                '''
+                        sudo docker run \
+                        -v ${PWD}:/opt/app \
+                        -v /var/log/drmsg/rumor-crawlers:/var/log/drmsg/rumor-crawlers \
+                        --rm ${TAG_IMAGE} \
+                        python app/mygopen.py 
+                    '''
+                }
             }
         }
     }

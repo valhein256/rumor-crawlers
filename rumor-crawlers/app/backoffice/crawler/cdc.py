@@ -2,13 +2,12 @@ import traceback
 import requests
 import re
 import os
-import hashlib
 from datetime import datetime
 from bs4 import BeautifulSoup
 from fake_useragent import UserAgent
 
-from . import crawlerProp
-from .crawler import Crawler
+from . import crawlerProp, remove_redundant_word
+from utils.crawler import gen_id
 from utils.settings import Settings
 from utils.logger import logger
 from models.aws.ddb.rumor_model import RumorModel
@@ -77,47 +76,11 @@ def extract_title(content_soup):
         return None
 
 
-def remove_redundant_word(sentence):
-    try:
-        for word in crawlerProp.REDUNDANT:
-            sentence = sentence.replace(word, "")
-
-        if sentence.startswith("，"):
-            sentence = sentence[1:]
-
-        for i in range(3):
-            sentence = sentence.strip()
-            if sentence.endswith("，"):
-                sentence = sentence[:-1]
-
-        return sentence
-
-    except Exception:
-        msg = traceback.format_exc()
-        logger.error(f"Error: {msg}")
-        return None
-
-
-def gen_id(data):
-    hash = hashlib.sha1()
-    hash.update(data.strip().encode("utf-8"))
-    return hash.hexdigest()
-
-
 class CdcCrawler():
     def __init__(self, setting):
         self.page_url = setting.cdc_page_url
         self.domain = setting.cdc_domain
         self.source = setting.cdc_source
-
-    def source(self):
-        return self.source
-
-    def fetch_latest_create_date_of_rumor(self):
-        for rumor in RumorModel.source_create_date_index.query(self.source,
-                                                               limit = 1,
-                                                               scan_index_forward = False):
-            return rumor.create_date
 
     def query(self, url):
         try:
@@ -133,7 +96,7 @@ class CdcCrawler():
             logger.error(f"Error: {msg}")
             return None
 
-    def parse_rumor_pages(self, date):
+    def parse_rumor_links(self, date):
         try:
             startTime = date.strftime("%Y.%m.%d")
             rumor_infos = []

@@ -53,7 +53,7 @@ def main():
     try:
         fda = FdaCrawler(setting)
         latest_create_date = fetch_latest_create_date_of_rumor(fda.source, args.date)
-        rumor_infos = fda.parse_rumor_pages(latest_create_date)
+        rumor_infos = fda.parse_rumor_links(latest_create_date)
         rumor_infos = sorted(rumor_infos, key=lambda k: k['date'])
 
         saved_new_rumor = list()

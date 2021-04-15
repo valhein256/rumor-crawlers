@@ -1,3 +1,6 @@
+import traceback
+
+
 class CrawlerProp():
     REDUNDANT =[
         "有關",
@@ -38,4 +41,26 @@ class CrawlerProp():
         "？"
     ]
 
+
 crawlerProp = CrawlerProp()
+
+
+def remove_redundant_word(sentence):
+    try:
+        for word in crawlerProp.REDUNDANT:
+            sentence = sentence.replace(word, "")
+
+        if sentence.startswith("，"):
+            sentence = sentence[1:]
+
+        for i in range(3):
+            sentence = sentence.strip()
+            if sentence.endswith("，"):
+                sentence = sentence[:-1]
+
+        return sentence
+
+    except Exception:
+        msg = traceback.format_exc()
+        logger.error(f"Error: {msg}")
+        return None

@@ -53,7 +53,7 @@ def main():
     try:
         cdc = CdcCrawler(setting)
         latest_create_date = fetch_latest_create_date_of_rumor(cdc.source, args.date)
-        rumor_infos = cdc.parse_rumor_pages(latest_create_date)
+        rumor_infos = cdc.parse_rumor_links(latest_create_date)
         rumor_infos = sorted(rumor_infos, key=lambda k: k['date'])
 
         saved_new_rumor = list()

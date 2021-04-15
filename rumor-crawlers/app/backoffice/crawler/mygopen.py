@@ -6,6 +6,7 @@ import hashlib
 import concurrent.futures
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
+from fake_useragent import UserAgent
 
 from . import crawlerProp
 from .crawler import Crawler
@@ -162,7 +163,8 @@ class MygopenCrawler():
 
     def query(self, url):
         try:
-            response = requests.get(url)
+            user_agent = UserAgent()
+            response = requests.get(url, headers={ 'user-agent': user_agent.random })
             if response.status_code == 200:
                 return response.text
             else:
@@ -201,6 +203,8 @@ class MygopenCrawler():
                 html_content = self.query(api)
                 html_soup = BeautifulSoup(html_content, 'lxml')
                 entry_list = html_soup.find_all('entry')
+
+                no_infos = list()
                 for entry_obj in entry_list:
                     rumor_info = dict()
                     u_dt = try_parse_date(entry_obj.find('updated').text)
@@ -213,8 +217,12 @@ class MygopenCrawler():
                         # rumor_info['published_date'] = p_dt.strftime("%Y-%m-%d")
                         if rumor_info not in rumor_infos:
                             rumor_infos.append(rumor_info)
+                        else:
+                            no_infos.append(rumor_info)
 
-                # logger.info("date: {}, rumor_infos: {}".format(date, rumor_infos))
+                if len(rumor_infos) > 0 or len(no_infos) > 0:
+                    logger.info("date: {}, number of rumor_infos: {}".format(date, len(rumor_infos)))
+                    logger.info("date: {}, number of no_infos: {}".format(date, len(no_infos)))
                 return rumor_infos
 
             except Exception:

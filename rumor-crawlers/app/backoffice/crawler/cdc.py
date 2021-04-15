@@ -5,6 +5,7 @@ import os
 import hashlib
 from datetime import datetime
 from bs4 import BeautifulSoup
+from fake_useragent import UserAgent
 
 from . import crawlerProp
 from .crawler import Crawler
@@ -120,7 +121,8 @@ class CdcCrawler():
 
     def query(self, url):
         try:
-            response = requests.get(url)
+            user_agent = UserAgent()
+            response = requests.get(url, headers={ 'user-agent': user_agent.random })
             if response.status_code == 200:
                 return response.text
             else:

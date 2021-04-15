@@ -29,8 +29,13 @@ endif
 .PHONY: config build launch compose stop run devenv test lint update
 
 config:
+ifeq ($(STAGE), prod)
 	@echo "Download config file..."
-	@aws s3 cp s3://<CONFIG_PATH>/${STAGE}/env ./config/env
+	@aws s3 cp s3://<PROD_CONFIG_PATH>/${STAGE}/env ./config/env
+else
+	@echo "Download config file..."
+	@aws s3 cp s3://<STG_CONFIG_PATH>/${STAGE}/env ./config/env
+endif
 
 build:
 	@echo "Build docker iamge..."

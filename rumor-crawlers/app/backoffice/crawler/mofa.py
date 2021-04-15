@@ -1,16 +1,12 @@
 import traceback
 import requests
-import re
-import os
 from datetime import datetime
 from bs4 import BeautifulSoup
 from fake_useragent import UserAgent
 
-from . import crawlerProp, remove_redundant_word
+from . import remove_redundant_word
 from utils.crawler import gen_id
-from utils.settings import Settings
 from utils.logger import logger
-from models.aws.ddb.rumor_model import RumorModel
 
 
 def extract_rumor_id(content_soup):
@@ -77,7 +73,7 @@ class MofaCrawler():
     def query(self, url):
         try:
             user_agent = UserAgent()
-            response = requests.get(url, headers={ 'user-agent': user_agent.random })
+            response = requests.get(url, headers={'user-agent': user_agent.random})
             if response.status_code == 200:
                 return response.text
             else:

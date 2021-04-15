@@ -1,6 +1,6 @@
 from pynamodb.models import Model
 from pynamodb.indexes import GlobalSecondaryIndex, AllProjection
-from pynamodb.attributes import UnicodeAttribute, NumberAttribute, BooleanAttribute, ListAttribute, MapAttribute
+from pynamodb.attributes import UnicodeAttribute, ListAttribute
 from utils.settings import Settings
 
 

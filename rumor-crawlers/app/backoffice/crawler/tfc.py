@@ -1,16 +1,13 @@
 import traceback
 import requests
 import re
-import os
 from datetime import datetime
 from bs4 import BeautifulSoup
 from fake_useragent import UserAgent
 
-from . import crawlerProp, remove_redundant_word
+from . import remove_redundant_word
 from utils.crawler import gen_id
-from utils.settings import Settings
 from utils.logger import logger
-from models.aws.ddb.rumor_model import RumorModel
 
 
 def remove_space(text):
@@ -99,7 +96,7 @@ def extract_clarification_and_rumor(content_soup):
                     startToCrawlRumor = False
                     startToCrawlClarification = True
                 elif content == '結論':
-                    break;
+                    break
             elif p.name == 'h2':
                 if content == '背景':
                     startToCrawlRumor = True
@@ -108,7 +105,7 @@ def extract_clarification_and_rumor(content_soup):
                     startToCrawlRumor = False
                     startToCrawlClarification = True
                 elif content == '結論':
-                    break;
+                    break
             else:
                 if content == '背景':
                     startToCrawlRumor = True
@@ -142,7 +139,7 @@ def extract_clarification_and_rumor(content_soup):
         if len(rumor_list) > 0:
             first_found = re.findall(".+指出：|.+訊息：|.+指稱：|.+傳言：|.+宣稱：|.+流傳：|.+如下：", rumor_list[0])
             if len(first_found) > 0:
-                rumor_list[0] = rumor_list[0].replace(first_found[0],"")
+                rumor_list[0] = rumor_list[0].replace(first_found[0], "")
 
         clarification = "".join(clarification_list)
         rumor = "".join(rumor_list)
@@ -154,10 +151,10 @@ def extract_clarification_and_rumor(content_soup):
         return None, None
 
 
-def extract_preface(content_soup):
+def extract_preface(content_soup, title):
     try:
         # preface
-        preface_list = content_soup.find(class_="node-preface");
+        preface_list = content_soup.find(class_="node-preface")
         if preface_list:
             all_preface_list = preface_list.find_all(['p'])
 
@@ -168,7 +165,6 @@ def extract_preface(content_soup):
                 if TAG_RE.search(content):
                     continue
                 preface_list.append(content)
-
 
             if len(preface_list) == 0:
                 preface_list.append(title)
@@ -222,7 +218,7 @@ class TfcCrawler():
     def query(self, url):
         try:
             user_agent = UserAgent()
-            response = requests.get(url, headers={ 'user-agent': user_agent.random })
+            response = requests.get(url, headers={'user-agent': user_agent.random})
             if response.status_code == 200:
                 return response.text
             else:
@@ -278,10 +274,10 @@ class TfcCrawler():
             html_soup = BeautifulSoup(html_content, 'lxml')
 
             clarification, rumor = extract_clarification_and_rumor(html_soup)
-            preface = extract_preface(html_soup)
             tags = extract_tags(html_soup)
             original_title = extract_title(html_soup)
             title = remove_redundant_word(original_title)
+            preface = extract_preface(html_soup, title)
 
             posted_item = {
                 "id": gen_id(rumor_info["link"]),

@@ -1,17 +1,13 @@
 import traceback
 import requests
-import re
-import os
 import concurrent.futures
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 from fake_useragent import UserAgent
 
-from . import crawlerProp, remove_redundant_word
+from . import remove_redundant_word
 from utils.crawler import gen_id
-from utils.settings import Settings
 from utils.logger import logger
-from models.aws.ddb.rumor_model import RumorModel
 
 
 def extract_rumor_img(content_soup):
@@ -19,9 +15,7 @@ def extract_rumor_img(content_soup):
         # image
         post_inner_obj = content_soup.find('div', class_='post-body-inner').find('img')
         img_link = post_inner_obj['src']
-        if (img_link.endswith("jpg") or img_link.endswith("JPG") or
-            img_link.endswith("jpeg") or img_link.endswith("JPEG") or
-                img_link.endswith("png") or img_link.endswith("PNG")):
+        if (img_link.endswith("jpg") or img_link.endswith("JPG") or img_link.endswith("jpeg") or img_link.endswith("JPEG") or img_link.endswith("png") or img_link.endswith("PNG")):
             if img_link.startswith("http:"):
                 img_link.replace("http:", "https:", 1)
             elif img_link.startswith("//"):
@@ -49,7 +43,7 @@ def extract_clarification_and_rumor(content_soup):
         rumor_list = []
         rumor = ''
         for tmp_obj in obj_list:
-            if tmp_obj.has_attr('class') == False:
+            if tmp_obj.has_attr('class') is False:
                 continue
 
             if ('tr_bq' in tmp_obj['class']):
@@ -130,7 +124,7 @@ class MygopenCrawler():
     def query(self, url):
         try:
             user_agent = UserAgent()
-            response = requests.get(url, headers={ 'user-agent': user_agent.random })
+            response = requests.get(url, headers={'user-agent': user_agent.random})
             if response.status_code == 200:
                 return response.text
             else:

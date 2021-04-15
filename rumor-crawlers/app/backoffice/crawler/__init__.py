@@ -1,8 +1,10 @@
 import traceback
+from utils.logger import logger
 
 
 class CrawlerProp():
-    REDUNDANT =[
+
+    REDUNDANT = [
         "有關",
         "外交部澄清說明如下：",
         "外交部深表遺憾",

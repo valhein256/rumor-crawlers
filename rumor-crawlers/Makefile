@@ -1,4 +1,4 @@
-SERVICE := crawlers
+SERVICE := drm-crawlers
 DEFAULT_APP := bin/main.py
 DEFAULT_STAGE := dev
 
@@ -31,10 +31,10 @@ endif
 config:
 ifeq ($(STAGE), prod)
 	@echo "Download config file..."
-	@aws s3 cp s3://<PROD_CONFIG_PATH>/${STAGE}/env ./config/env
+	@aws s3 cp s3://drm-prod-builds/drm-rumor-crawlers/${STAGE}/env ./config/env
 else
 	@echo "Download config file..."
-	@aws s3 cp s3://<STG_CONFIG_PATH>/${STAGE}/env ./config/env
+	@aws s3 cp s3://drm-stg-builds/drm-rumor-crawlers/${STAGE}/env ./config/env
 endif
 
 build:
@@ -111,7 +111,7 @@ lint:
 	@docker run \
 		-v ${PWD}:/opt/app \
 		--rm ${SERVICE}-develop \
-		flake8 **/*.py 
+		flake8 --ignore=E501
 
 update:
 	@docker run \

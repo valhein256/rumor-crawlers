@@ -11,8 +11,8 @@ for s in ["cdc", "mofa", "fda", "mygopen", "tfc"]:
 print(rumors)
 
 # for s in ["cdc"]:
-    # for rumor in RumorModel.scan(RumorModel.source.startswith(s)):
-        # rumor.delete()
+#   for rumor in RumorModel.scan(RumorModel.source.startswith(s)):
+#       rumor.delete()
 
 rumors = list()
 for rumor in RumorModel.scan(RumorModel.rumors == [""]):
@@ -20,5 +20,3 @@ for rumor in RumorModel.scan(RumorModel.rumors == [""]):
 
 for rumor in rumors:
     print(rumor.id, rumor.link, rumor.tags)
-
-

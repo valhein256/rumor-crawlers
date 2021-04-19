@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="zh-hant">
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+  <title>事實查核報告 | 台灣事實查核中心</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="https://tfc-taiwan.org.tw/sites/default/files/favico.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="看見真實，才能打造美好的台灣！本中心參考國外具代表性的事實查核機制，並輔以我國的傳播生態需求，依循專業、透明、公正的原則，執行公共事務相關訊息之事實查核。期能抑制不實資訊的負面影響，提升公眾的資訊素養，裨益台灣的民主發展。" />
+<meta name="generator" content="Drupal 7 (https://www.drupal.org)" />
+<link rel="canonical" href="https://tfc-taiwan.org.tw/articles/report" />
+<link rel="shortlink" href="https://tfc-taiwan.org.tw/articles/report" />
+<meta property="og:site_name" content="台灣事實查核中心" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tfc-taiwan.org.tw/articles/report" />
+<meta property="og:title" content="事實查核報告" />
+<meta property="og:description" content="看見真實，才能打造美好的台灣！本中心參考國外具代表性的事實查核機制，並輔以我國的傳播生態需求，依循專業、透明、公正的原則，執行公共事務相關訊息之事實查核。期能抑制不實資訊的負面影響，提升公眾的資訊素養，裨益台灣的民主發展。" />
+<meta property="og:image" content="https://tfc-taiwan.org.tw/sites/all/themes/tfc_ogimage.jpeg" />
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <style type="text/css" media="all">
+@import url("https://tfc-taiwan.org.tw/modules/system/system.base.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/modules/system/system.menus.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/modules/system/system.messages.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/modules/system/system.theme.css?qrst4b");
+</style>
+<style type="text/css" media="all">
+@import url("https://tfc-taiwan.org.tw/modules/book/book.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/sites/all/modules/date/date_api/date.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/sites/all/modules/date/date_popup/themes/datepicker.1.7.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/modules/field/theme/field.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/sites/all/modules/field_hidden/field_hidden.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/sites/all/modules/google_cse/google_cse.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/sites/all/modules/logintoboggan/logintoboggan.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/modules/node/node.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/modules/search/search.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/modules/user/user.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/sites/all/modules/youtube/css/youtube.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/sites/all/modules/extlink/extlink.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/sites/all/modules/views/css/views.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/sites/all/modules/ckeditor/css/ckeditor.css?qrst4b");
+</style>
+<style type="text/css" media="all">
+@import url("https://tfc-taiwan.org.tw/sites/all/modules/colorbox/styles/default/colorbox_style.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/sites/all/modules/ctools/css/ctools.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/sites/all/modules/custom/netivism_admin_better/css/admin_menu_style.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/sites/all/modules/custom/netivism_admin_better/css/simplemenu_style.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/sites/all/modules/custom/netivism_admin_better/css/netivism_admin_better.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/sites/all/modules/panels/css/panels.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/sites/all/modules/panels_extra_layouts/plugins/layouts/moscone_flipped/moscone-flipped.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/sites/all/modules/responsive_menus/styles/meanMenu/meanmenu.min.css?qrst4b");
+</style>
+<link type="text/css" rel="stylesheet" href="" media="all" />
+<style type="text/css" media="all">
+@import url("https://tfc-taiwan.org.tw/sites/all/themes/netivism/vendor/material-design-iconic-font/dist/css/material-design-iconic-font.min.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/sites/all/themes/netivism/vendor/mmenu/dist/jquery.mmenu.all.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/sites/all/themes/netivism/vendor/mmenu/dist/extensions/positioning/jquery.mmenu.positioning.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/sites/all/themes/netivism/vendor/hamburgers/dist/hamburgers.min.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/sites/all/libraries/superfish/css/superfish.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/sites/all/libraries/superfish/css/superfish-smallscreen.css?qrst4b");
+</style>
+<style type="text/css" media="all">
+@import url("https://tfc-taiwan.org.tw/sites/all/themes/netivism/vendor/normalize-css/normalize.css?qrst4b");
+</style>
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" media="all" />
+<style type="text/css" media="all">
+@import url("https://tfc-taiwan.org.tw/sites/all/themes/netivism/css/default.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/sites/all/themes/netivism/css/override.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/sites/all/themes/netivism/css/style.css?qrst4b");
+@import url("https://tfc-taiwan.org.tw/sites/all/themes/netivism/css/custom.css?qrst4b");
+</style>
+<style type="text/css" media="print">
+@import url("https://tfc-taiwan.org.tw/sites/all/themes/netivism/css/print.css?qrst4b");
+</style>
+  <!-- <link href="https://fonts.googleapis.com/earlyaccess/notosanstc.css" rel="stylesheet"> -->
+  <!-- <link rel="stylesheet" type="text/css" href="/sites/all/themes/netivism/css/override.css"> -->
+  <!-- <link rel="stylesheet" type="text/css" href="/sites/all/themes/netivism/css/style-devel.css">-->
+  <!-- <link rel="stylesheet" type="text/css" href="/sites/all/themes/netivism/css/custom.css">-->
+  <script type="text/javascript" src="https://tfc-taiwan.org.tw/sites/all/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
+<script type="text/javascript" src="https://tfc-taiwan.org.tw/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://tfc-taiwan.org.tw/misc/drupal.js?qrst4b"></script>
+<script type="text/javascript" src="https://tfc-taiwan.org.tw/sites/all/themes/netivism/vendor/mmenu/dist/jquery.mmenu.all.js?qrst4b"></script>
+<script type="text/javascript" src="https://tfc-taiwan.org.tw/sites/all/themes/netivism/vendor/mmenu/dist/addons/fixedelements/jquery.mmenu.fixedelements.js?qrst4b"></script>
+<script type="text/javascript" src="https://tfc-taiwan.org.tw/sites/all/themes/netivism/js/mmenu-init.js?qrst4b"></script>
+<script type="text/javascript" src="https://tfc-taiwan.org.tw/sites/all/modules/google_cse/google_cse.js?qrst4b"></script>
+<script type="text/javascript" src="https://tfc-taiwan.org.tw/sites/all/modules/extlink/extlink.js?qrst4b"></script>
+<script type="text/javascript" src="https://tfc-taiwan.org.tw/sites/default/files/languages/zh-hant_HIWO-NRQqKjQjf-Owxhw3x-eBjoRuYvLe38lOLEpBpo.js?qrst4b"></script>
+<script type="text/javascript" src="https://tfc-taiwan.org.tw/sites/all/libraries/colorbox/jquery.colorbox-min.js?qrst4b"></script>
+<script type="text/javascript" src="https://tfc-taiwan.org.tw/sites/all/modules/colorbox/js/colorbox.js?qrst4b"></script>
+<script type="text/javascript" src="https://tfc-taiwan.org.tw/sites/all/modules/colorbox/styles/default/colorbox_style.js?qrst4b"></script>
+<script type="text/javascript" src="https://tfc-taiwan.org.tw/misc/collapse.js?qrst4b"></script>
+<script type="text/javascript" src="https://tfc-taiwan.org.tw/misc/form.js?qrst4b"></script>
+<script type="text/javascript" src="https://tfc-taiwan.org.tw/sites/all/modules/responsive_menus/styles/meanMenu/jquery.meanmenu.min.js?qrst4b"></script>
+<script type="text/javascript" src="https://tfc-taiwan.org.tw/sites/all/modules/responsive_menus/styles/meanMenu/responsive_menus_mean_menu.js?qrst4b"></script>
+<script type="text/javascript" src="https://tfc-taiwan.org.tw/sites/all/modules/google_analytics/googleanalytics.js?qrst4b"></script>
+<script type="text/javascript">(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-123156786-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");</script>
+<script type="text/javascript" src="https://tfc-taiwan.org.tw/sites/all/libraries/superfish/jquery.hoverIntent.minified.js?qrst4b"></script>
+<script type="text/javascript" src="https://tfc-taiwan.org.tw/sites/all/libraries/superfish/sfsmallscreen.js?qrst4b"></script>
+<script type="text/javascript" src="https://tfc-taiwan.org.tw/sites/all/libraries/superfish/supposition.js?qrst4b"></script>
+<script type="text/javascript" src="https://tfc-taiwan.org.tw/sites/all/libraries/superfish/superfish.js?qrst4b"></script>
+<script type="text/javascript" src="https://tfc-taiwan.org.tw/sites/all/libraries/superfish/supersubs.js?qrst4b"></script>
+<script type="text/javascript" src="https://tfc-taiwan.org.tw/sites/all/modules/superfish/superfish.js?qrst4b"></script>
+<script type="text/javascript" src="https://tfc-taiwan.org.tw/sites/all/themes/netivism/js/theme.js?qrst4b"></script>
+<script type="text/javascript" src="https://tfc-taiwan.org.tw/sites/all/themes/netivism/js/custom.js?qrst4b"></script>
+<script type="text/javascript">jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"netivism","theme_token":"Lg4Mj7qKH_IssFPN0R3tqkBqWljZ2euHfOC53YEbyz8","js":{"sites\/all\/modules\/google_cse\/google_cse_results.js":1,"sites\/all\/modules\/addthis\/addthis.js":1,"sites\/all\/modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/themes\/netivism\/vendor\/mmenu\/dist\/jquery.mmenu.all.js":1,"sites\/all\/themes\/netivism\/vendor\/mmenu\/dist\/addons\/fixedelements\/jquery.mmenu.fixedelements.js":1,"sites\/all\/themes\/netivism\/js\/mmenu-init.js":1,"sites\/all\/modules\/google_cse\/google_cse.js":1,"sites\/all\/modules\/extlink\/extlink.js":1,"public:\/\/languages\/zh-hant_HIWO-NRQqKjQjf-Owxhw3x-eBjoRuYvLe38lOLEpBpo.js":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"misc\/collapse.js":1,"misc\/form.js":1,"sites\/all\/modules\/responsive_menus\/styles\/meanMenu\/jquery.meanmenu.min.js":1,"sites\/all\/modules\/responsive_menus\/styles\/meanMenu\/responsive_menus_mean_menu.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/all\/libraries\/superfish\/jquery.hoverIntent.minified.js":1,"sites\/all\/libraries\/superfish\/sfsmallscreen.js":1,"sites\/all\/libraries\/superfish\/supposition.js":1,"sites\/all\/libraries\/superfish\/superfish.js":1,"sites\/all\/libraries\/superfish\/supersubs.js":1,"sites\/all\/modules\/superfish\/superfish.js":1,"sites\/all\/themes\/netivism\/js\/theme.js":1,"sites\/all\/themes\/netivism\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/book\/book.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/field_hidden\/field_hidden.css":1,"sites\/all\/modules\/google_cse\/google_cse.css":1,"sites\/all\/modules\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/youtube\/css\/youtube.css":1,"sites\/all\/modules\/extlink\/extlink.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/themes\/netivism\/css\/tabs.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/custom\/netivism_admin_better\/css\/admin_menu_style.css":1,"sites\/all\/modules\/custom\/netivism_admin_better\/css\/simplemenu_style.css":1,"sites\/all\/modules\/custom\/netivism_admin_better\/css\/netivism_admin_better.css":1,"sites\/all\/modules\/panels\/css\/panels.css":1,"sites\/all\/modules\/panels_extra_layouts\/plugins\/layouts\/moscone_flipped\/moscone-flipped.css":1,"sites\/all\/modules\/responsive_menus\/styles\/meanMenu\/meanmenu.min.css":1,"sites\/all\/themes\/netivism\/vendor\/material-design-iconic-font\/dist\/css\/material-design-iconic-font.min.css":1,"sites\/all\/themes\/netivism\/vendor\/mmenu\/dist\/jquery.mmenu.all.css":1,"sites\/all\/themes\/netivism\/vendor\/mmenu\/dist\/extensions\/positioning\/jquery.mmenu.positioning.css":1,"sites\/all\/themes\/netivism\/vendor\/hamburgers\/dist\/hamburgers.min.css":1,"sites\/all\/libraries\/superfish\/css\/superfish.css":1,"sites\/all\/libraries\/superfish\/css\/superfish-smallscreen.css":1,"sites\/all\/themes\/netivism\/vendor\/normalize-css\/normalize.css":1,"https:\/\/fonts.googleapis.com\/css?family=Noto+Sans+TC":1,"sites\/all\/themes\/netivism\/css\/default.css":1,"sites\/all\/themes\/netivism\/css\/override.css":1,"sites\/all\/themes\/netivism\/css\/style.css":1,"sites\/all\/themes\/netivism\/css\/custom.css":1,"sites\/all\/themes\/netivism\/css\/print.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"\u95dc\u9589","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"googleCSE":{"cx":"016739345681392223711:urihlbomoaq","language":"","resultsWidth":600,"domain":"www.google.com","showWaterMark":0},"jcarousel":{"ajaxPath":"\/jcarousel\/ajax\/views"},"better_exposed_filters":{"views":{"clone_of_article":{"displays":{"block_5":{"filters":[]}}},"blk_content":{"displays":{"block_1":{"filters":[]}}}}},"responsive_menus":[{"selectors":"#nav","container":"body","trigger_txt":"\u003Cspan \/\u003E\u003Cspan \/\u003E\u003Cspan \/\u003E","close_txt":"X","close_size":"18px","position":"right","media_size":"992","show_children":"1","expand_children":"1","expand_txt":"+","contract_txt":"-","remove_attrs":"1","responsive_menus_style":"mean_menu"}],"extlink":{"extTarget":"_blank","extClass":0,"extLabel":"(link is external)","extImgClass":0,"extIconPlacement":0,"extSubdomains":1,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":0,"extAlertText":"This link will take you to an external web site.","mailtoClass":0,"mailtoLabel":"(link sends e-mail)"},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"urlIsAjaxTrusted":{"\/articles\/report?page=1":true},"superfish":{"1":{"id":"1","sf":{"animation":{"opacity":"show","height":"show"},"speed":"fast"},"plugins":{"smallscreen":{"mode":"window_width","breakpointUnit":"px","expandText":"\u5c55\u958b","collapseText":"\u647a\u758a","title":"\u6b21\u9078\u55ae 2020"},"supposition":true,"supersubs":true}}}});</script>
+</head>
+<!--[if lt IE 7 ]><body class="ie6 html not-front not-logged-in no-sidebars page-articles page-articles-report page-reports is-admin-better simplemenu-theme-dark section-articles"><![endif]-->
+<!--[if IE 7 ]><body class="ie7 html not-front not-logged-in no-sidebars page-articles page-articles-report page-reports is-admin-better simplemenu-theme-dark section-articles"><![endif]-->
+<!--[if IE 8 ]><body class="ie8 html not-front not-logged-in no-sidebars page-articles page-articles-report page-reports is-admin-better simplemenu-theme-dark section-articles"><![endif]-->
+<!--[if IE 9 ]><body class="ie9 html not-front not-logged-in no-sidebars page-articles page-articles-report page-reports is-admin-better simplemenu-theme-dark section-articles"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><body class="html not-front not-logged-in no-sidebars page-articles page-articles-report page-reports is-admin-better simplemenu-theme-dark section-articles" ><!--<![endif]-->
+  <p id="skip-link">
+    <a class="element-invisible element-focusable" href="#navigation">Jump to Navigation</a>
+    <a class="element-invisible element-focusable" href="#main-content">Jump to Main content</a>
+  </p>
+    <div id="page" class="page">
+      <header class="header">
+      <div class="header-inner limiter">
+  
+      <div class="logo-title">
+                  <a class="logo" href="/" title="首頁" rel="home"><img src="https://tfc-taiwan.org.tw/sites/default/files/TFC_LOGO.png" alt="首頁" /></a>
+        
+        <div class="name-and-slogan">
+                            </div> <!-- .name-and-slogan -->
+      </div> <!-- .logo-title -->
+
+              <div class="navbar">
+                        <div class="region region-header">
+    <div id="block-menu-menu-slinks" class="block block-menu block-odd clearfix">
+  <div class="block-inner">
+
+            		
+		<div class="block-content" >
+      <ul class="menu"><li class="first leaf ico facebook facebook mid-3631"><a href="https://www.facebook.com/taiwantfc/">facebook</a></li>
+<li class="leaf ico instagram instagram mid-3632"><a href="https://www.instagram.com/taiwan_factcheckcenter/">instagram</a></li>
+<li class="leaf ico line line mid-3633"><a href="https://line.me/R/ti/p/%40tfctaiwan">line</a></li>
+<li class="leaf ico twitter twitter mid-3630"><a href="https://twitter.com/taiwantfc">twitter</a></li>
+<li class="last leaf ico youtube youtube mid-3634"><a href="https://www.youtube.com/channel/UCRrO7rwIR0n7P1K2Fc7CIXA">youtube</a></li>
+</ul>		</div>
+
+  </div> <!-- /block-inner -->
+</div> <!-- /block -->
+  </div>
+          
+                  </div> <!-- .navbar -->
+      
+        </div> <!-- .header-inner -->
+        <div class="region region-header-img">
+    <div id="block-headerimage-1" class="block block-headerimage block-odd clearfix">
+  <div class="block-inner">
+
+            		
+		<div class="block-content" >
+      
+  
+  <div class="field field-name-field-tb-image field-type-image field-label-hidden">
+    <div class="field-items">
+          <div class="field-item even"><img typeof="foaf:Image" src="https://tfc-taiwan.org.tw/sites/default/files/tb-image/report_2.jpg" width="2000" height="604" alt="" /></div>
+      </div>
+</div>
+
+  		</div>
+
+  </div> <!-- /block-inner -->
+</div> <!-- /block -->
+  </div>
+    </header> <!-- .header -->
+  
+      <nav class="navigation">
+      <div class="navigation-inner limiter">
+          <div class="region region-navigation">
+    <div id="block-menu-menu-main-2020" class="block block-menu block-odd clearfix">
+  <div class="block-inner">
+
+            		
+		<div class="block-content" >
+      <ul class="menu"><li class="first leaf 查核準則 mid-3640"><a href="/about/principle">查核準則</a></li>
+<li class="leaf 我要申訴 mid-3638"><a href="https://tfc-taiwan.org.tw/appeal">我要申訴</a></li>
+<li class="leaf 查核工具箱 mid-3704"><a href="https://tfc-taiwan.org.tw/topic/4112">查核工具箱</a></li>
+<li class="leaf 關於我們 mid-3636"><a href="/about/purpose">關於我們</a></li>
+<li class="leaf 聯絡我們 mid-3637"><a href="/contact">聯絡我們</a></li>
+<li class="leaf 捐款 mid-3639"><a href="/about/donation">捐款</a></li>
+<li class="last leaf 登入 mid-3688"><a href="/user/login" class="loginout">登入</a></li>
+</ul>		</div>
+
+  </div> <!-- /block-inner -->
+</div> <!-- /block -->
+<div id="block-google-cse-google-cse" class="block block-google-cse block-even clearfix">
+  <div class="block-inner">
+
+            		
+		<div class="block-content" >
+      
+
+  <form action="/articles/report?page=1" method="get" id="google-cse-results-searchbox-form" accept-charset="UTF-8"><div><input type="hidden" name="cx" value="016739345681392223711:urihlbomoaq" />
+<input type="hidden" name="cof" value="FORID:11" />
+<div class="form-item form-type-textfield form-item-query">
+  <label for="edit-query">輸入關鍵字 </label>
+ <input type="text" id="edit-query" name="query" value="" size="40" maxlength="128" class="form-text" />
+</div>
+<input type="submit" id="edit-sa" name="op" value="搜尋" class="form-submit" /><input type="hidden" name="ie" value="utf-8" />
+<input type="hidden" name="form_build_id" value="form-zMRvSnJHnjvKvSQJ8sYAQtrD6I6Q7sM1puoLDLRtOpY" />
+<input type="hidden" name="form_id" value="google_cse_results_searchbox_form" />
+</div></form>
+<div id="google-cse-results">
+  <gcse:searchresults-only gname="google_cse"></gcse:searchresults-only>  <noscript>
+    You must enable JavaScript to view the search results.  </noscript>
+</div>
+		</div>
+
+  </div> <!-- /block-inner -->
+</div> <!-- /block -->
+<div id="block-block-42" class="block block-block block-odd clearfix">
+  <div class="block-inner">
+
+            		
+		<div class="block-content" >
+      <a class="search-btn"></a>		</div>
+
+  </div> <!-- /block-inner -->
+</div> <!-- /block -->
+  </div>
+      </div>
+    </nav> <!-- .navigation -->
+  
+      <div class="preface">
+      <div class="preface-inner limiter">
+          <div class="region region-preface">
+    <div id="block-superfish-1" class="block block-superfish block-odd clearfix">
+  <div class="block-inner">
+
+            		
+		<div class="block-content" >
+      <ul  id="superfish-1" class="menu sf-menu sf-menu-pick sf-horizontal sf-style-none sf-total-items-12 sf-parent-items-2 sf-single-items-10"><li id="menu-3703-1" class="first odd sf-item-1 sf-depth-1 sf-no-children"><a href="https://tfc-taiwan.org.tw/articles/report" class="sf-depth-1">最新查核報告</a></li><li id="menu-3643-1" class="middle even sf-item-2 sf-depth-1 sf-no-children"><a href="/taxonomy/term/473" class="sf-depth-1">政治與政策</a></li><li id="menu-3644-1" class="middle odd sf-item-3 sf-depth-1 sf-no-children"><a href="/taxonomy/term/474" class="sf-depth-1">生活</a></li><li id="menu-3645-1" class="middle even sf-item-4 sf-depth-1 sf-no-children"><a href="/taxonomy/term/475" class="sf-depth-1">健康</a></li><li id="menu-3646-1" class="middle odd sf-item-5 sf-depth-1 sf-no-children"><a href="/taxonomy/term/476" class="sf-depth-1">科技資安</a></li><li id="menu-3648-1" class="middle even sf-item-6 sf-depth-1 sf-no-children"><a href="/taxonomy/term/478" class="sf-depth-1">環境能源</a></li><li id="menu-3649-1" class="middle odd sf-item-7 sf-depth-1 sf-no-children"><a href="/taxonomy/term/479" class="sf-depth-1">國際</a></li><li id="menu-3647-1" class="middle even sf-item-8 sf-depth-1 sf-no-children"><a href="/taxonomy/term/477" class="sf-depth-1">科學研究</a></li><li id="menu-3691-1" class="middle odd sf-item-9 sf-depth-1 sf-no-children"><a href="https://tfc-taiwan.org.tw/articles/category/22/23" class="sf-depth-1">研究動態</a></li><li id="menu-3681-1" class="middle even sf-item-10 sf-depth-1 sf-no-children"><a href="/articles/category/242" class="sf-depth-1">謠言風向球</a></li><li id="menu-3650-1" class="middle odd sf-item-11 sf-depth-1 sf-total-children-8 sf-parent-children-0 sf-single-children-8 menuparent"><a href="/topics" class="sf-depth-1 menuparent">專題</a><ul><li id="menu-3725-1" class="first odd sf-item-1 sf-depth-2 sf-no-children"><a href="https://tfc-taiwan.org.tw/topic/5156" class="sf-depth-2">疫苗不實訊息專區</a></li><li id="menu-3651-1" class="middle even sf-item-2 sf-depth-2 sf-no-children"><a href="/topic/3826" class="sf-depth-2">COVID-19 專區</a></li><li id="menu-3696-1" class="middle odd sf-item-3 sf-depth-2 sf-no-children"><a href="https://tfc-taiwan.org.tw/topic/4710" class="sf-depth-2">2020美國總統大選</a></li><li id="menu-3694-1" class="middle even sf-item-4 sf-depth-2 sf-no-children"><a href="https://tfc-taiwan.org.tw/topic/4070" class="sf-depth-2">2020事實查核峰會</a></li><li id="menu-3693-1" class="middle odd sf-item-5 sf-depth-2 sf-no-children"><a href="https://tfc-taiwan.org.tw/topic/4013" class="sf-depth-2">美國種族歧視抗議</a></li><li id="menu-3652-1" class="middle even sf-item-6 sf-depth-2 sf-no-children"><a href="/topic/3974" class="sf-depth-2">高雄市長罷免投票</a></li><li id="menu-3695-1" class="middle odd sf-item-7 sf-depth-2 sf-no-children"><a href="https://tfc-taiwan.org.tw/topic/4186" class="sf-depth-2">2020台灣總統大選</a></li><li id="menu-3697-1" class="last even sf-item-8 sf-depth-2 sf-no-children"><a href="https://tfc-taiwan.org.tw/topic/4112" class="sf-depth-2">查核工具箱總整理</a></li></ul></li><li id="menu-3653-1" class="last even sf-item-12 sf-depth-1 sf-total-children-8 sf-parent-children-0 sf-single-children-8 menuparent"><a href="/articles/info" class="sf-depth-1 menuparent">其他</a><ul><li id="menu-3698-1" class="first odd sf-item-1 sf-depth-2 sf-no-children"><a href="https://tfc-taiwan.org.tw/articles/category/22/34" class="sf-depth-2">公告與新聞稿</a></li><li id="menu-3699-1" class="middle even sf-item-2 sf-depth-2 sf-no-children"><a href="https://tfc-taiwan.org.tw/articles/category/22/23" class="sf-depth-2">研究與動態</a></li><li id="menu-3654-1" class="middle odd sf-item-3 sf-depth-2 sf-no-children"><a href="/articles/category/242" class="sf-depth-2">謠言風向球</a></li><li id="menu-3700-1" class="middle even sf-item-4 sf-depth-2 sf-no-children"><a href="https://tfc-taiwan.org.tw/articles/category/22/24" class="sf-depth-2">查核工具箱總整理</a></li><li id="menu-3701-1" class="middle odd sf-item-5 sf-depth-2 sf-no-children"><a href="https://tfc-taiwan.org.tw/articles/category/22/25" class="sf-depth-2">活動紀錄</a></li><li id="menu-3655-1" class="middle even sf-item-6 sf-depth-2 sf-no-children"><a href="/articles/category/252" class="sf-depth-2">專家意見</a></li><li id="menu-3702-1" class="middle odd sf-item-7 sf-depth-2 sf-no-children"><a href="https://tfc-taiwan.org.tw/articles/category/22/35" class="sf-depth-2">TFC報導蒐集區</a></li><li id="menu-3728-1" class="last even sf-item-8 sf-depth-2 sf-no-children"><a href="/articles/category/22/1204" class="sf-depth-2">編輯室觀測_謠言TOP10</a></li></ul></li></ul>		</div>
+
+  </div> <!-- /block-inner -->
+</div> <!-- /block -->
+  </div>
+      </div>
+    </div> <!-- .preface -->
+  
+  <main class="main">
+    <div class="main-inner limiter">
+              <div class="main-top">
+          <h2 class="element-invisible">您在這裡</h2><div class="breadcrumb"><a href="/">首頁</a></div>          
+          
+                  </div> <!-- .main-top -->
+            
+      <div class="main-content">
+        <div class="content">
+          <div class="content-inner">
+                          <div class="content-header">
+                                  <h1 class="page-title">事實查核報告</h1>
+                
+                
+                
+                
+                
+                              </div> <!-- .content-header -->
+            
+            <div class="content-main">
+                            
+              <div class="content-main-middle">
+                  <div class="region region-content">
+    <div id="block-system-main" class="block block-system block-odd clearfix">
+  <div class="block-inner">
+
+            		
+		<div class="block-content" >
+      
+<div class="panel-display moscone-flipped clearfix " >
+
+  <div class="moscone-container moscone-header clearfix panel-panel">
+    <div class="moscone-container-inner moscone-header-inner panel-panel-inner">
+          </div>
+  </div>
+
+  <div class="moscone-flipped-container moscone-flipped-column-content clearfix">
+    <div class="moscone-flipped-column-content-region moscone-flipped-content panel-panel">
+      <div class="moscone-flipped-column-content-region-inner moscone-flipped-content-inner panel-panel-inner">
+        <div class="panel-pane pane-views pane-clone-of-article"  >
+  
+      
+  
+  <div class="pane-content">
+    <div class="view view-clone-of-article view-id-clone_of_article view-display-id-block_5 entity-list type-article attr-blkX10 view-dom-id-6e73b666415968b5735edd20bf5fad79">
+  <div class="view-inner">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first entity-row">
+    <div class="views-row-inner entity-row-inner">
+        
+  <div class="entity-list-img left-pane">        <a href="/articles/5283"><img typeof="foaf:Image" src="https://tfc-taiwan.org.tw/sites/default/files/styles/r1d33/public/upload/node/field_blog_images/892_2_0.jpg?itok=1rKFr72z" width="360" height="270" alt="" /></a>  </div>  
+          <div class="right-pane views-fieldset" data-module="views_fieldsets">
+            <div class="entity-list-tags"><div class="icon-tag 錯誤"><span class="lineage-item lineage-item-level-0"><a href="/articles/category/26/27">錯誤</a></span></div><div class="attr-tag"><a href="/taxonomy/term/475" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">健康</a></div></div>                <h3 class="entity-list-title"><a href="/articles/TEST-5283">【錯誤】網傳「特好消息！新冠疫情再見了...美國即將有治療新冠病毒的口服液...患有新冠狀病毒者在家口服該藥5天，體內徹底清除了新冠狀病毒」？</a></h3>                <div class="entity-list-body">一、 美國默克藥廠（在台灣稱美商默沙東）和生技公司Ridgeback Biotherapeutics 正在研發用於治療新冠肺炎的藥物莫納皮拉韋（Molnupiravir），進度落在第二期至第三期合併臨床試驗，尚未有最終臨床結果。
+
+二、莫納皮拉韋（Molnupiravir）為口服抗病毒藥物，並非傳言所稱的口服液。
+
+三、專家指出，新藥臨床療效評估須經過第三期臨床試驗驗證其治療效益，並藉由發表於科學期刊過程中嚴謹的同儕審查，驗證其研究執行以及評估的正確性，才可採信其療效。
+
+傳言介紹此新冠肺炎藥物的名稱、研發階段和藥物劑型等資訊多處錯誤，因此，此傳言為錯誤訊息。
+</div>                <div class="entity-list-more"><div class="post-date">發布日期：2021-04-14</div><div class="l2c"><a href="/articles/5283">更多</a></div></div>      </div>
+
+      </div>
+  </div>
+  <div class="views-row views-row-2 views-row-even entity-row">
+    <div class="views-row-inner entity-row-inner">
+        
+  <div class="entity-list-img left-pane">        <a href="/articles/5279"><img typeof="foaf:Image" src="https://tfc-taiwan.org.tw/sites/default/files/styles/r1d33/public/upload/node/field_blog_images/891_photo.jpeg?itok=BvavAULA" width="360" height="270" alt="" /></a>  </div>  
+          <div class="right-pane views-fieldset" data-module="views_fieldsets">
+            <div class="entity-list-tags"><div class="icon-tag 錯誤"><span class="lineage-item lineage-item-level-0"><a href="/articles/category/26/27">錯誤</a></span></div><div class="attr-tag"><a href="/taxonomy/term/478" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">環境能源</a></div></div>                <h3 class="entity-list-title"><a href="/articles/5279">【錯誤】網傳圖片宣稱「這是一種來自巴西的蘭花，名叫Peristeria，它在復活節的季節裡開花，也被稱為聖靈的花...」？</a></h3>                <div class="entity-list-body">一、傳言宣稱「開花如鴿子狀」的植物是「鷺蘭（Habenaria radiata，異名：Pecteilis radiata），主要棲地在日本、台灣、朝鮮半島，每年7到9月開花。
+
+二、另一版本的傳言搭配「形狀像祈禱的修士」植物照，其學名為「Catasetum Integerrimum 」，屬蘭科，主要分布在中美洲，在4月和8月最容易在野外被發現。
+
+三、「Peristeria」是另一蘭科植物，與「鷺蘭」、「Catasetum Integerrimum」親緣較遠。
+
+以上二種植物並不相同，學名並非「Peristeria」，開花季節也非「復活節（4月4日）」期間，因此，傳言為「錯誤」訊息。
+</div>                <div class="entity-list-more"><div class="post-date">發布日期：2021-04-13</div><div class="l2c"><a href="/articles/5279">更多</a></div></div>      </div>
+
+      </div>
+  </div>
+  <div class="views-row views-row-3 views-row-odd entity-row">
+    <div class="views-row-inner entity-row-inner">
+        
+  <div class="entity-list-img left-pane">        <a href="/articles/5278"><img typeof="foaf:Image" src="https://tfc-taiwan.org.tw/sites/default/files/styles/r1d33/public/upload/node/field_blog_images/890_photo_0.jpeg?itok=qVv-Up7O" width="360" height="270" alt="" /></a>  </div>  
+          <div class="right-pane views-fieldset" data-module="views_fieldsets">
+            <div class="entity-list-tags"><div class="icon-tag 錯誤"><span class="lineage-item lineage-item-level-0"><a href="/articles/category/26/27">錯誤</a></span></div><div class="attr-tag"><a href="/taxonomy/term/474" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">生活</a></div></div>                <h3 class="entity-list-title"><a href="/articles/5278">【錯誤】網傳「市政府通知：不要在室外曬被子、衣服...因為要飛機灑藥治白蛾及消毒，大家請留意」？</a></h3>                <div class="entity-list-body">一、多個地方政府都曾澄清，此傳言純屬虛構，並不是市政府公告。
+
+二、地方政府環保局人員指出，地方政府不曾使用過飛機灑藥防治害蟲；農委會防檢局指出，台灣境內沒有傳言所稱的「白蛾」。傳言稱「市政府要用飛機灑藥來治白蛾」，並不符合事實。
+
+三、地方政府目前有灑藥防治的主要為病媒蚊，採人工地面噴灑方式。
+
+因此，傳言為「錯誤」訊息。
+</div>                <div class="entity-list-more"><div class="post-date">發布日期：2021-04-12</div><div class="l2c"><a href="/articles/5278">更多</a></div></div>      </div>
+
+      </div>
+  </div>
+  <div class="views-row views-row-4 views-row-even entity-row">
+    <div class="views-row-inner entity-row-inner">
+        
+  <div class="entity-list-img left-pane">        <a href="/articles/5277"><img typeof="foaf:Image" src="https://tfc-taiwan.org.tw/sites/default/files/styles/r1d33/public/upload/node/field_blog_images/889_%E6%89%8B%E6%A9%9F%E9%9B%BB%E7%A3%81%E6%B3%A2.png?itok=Qh_MXovR" width="360" height="270" alt="" /></a>  </div>  
+          <div class="right-pane views-fieldset" data-module="views_fieldsets">
+            <div class="entity-list-tags"><div class="icon-tag 證據不足"><span class="lineage-item lineage-item-level-0"><a href="/articles/category/1125">證據不足</a></span></div><div class="attr-tag"><a href="/taxonomy/term/474" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">生活</a></div></div>                <h3 class="entity-list-title"><a href="/articles/5277">【證據不足】網傳影片稱「不要充電的時候打電話，手機充電時打電話，全身會有致癌的電磁波」？</a></h3>                <div class="entity-list-body">一、網傳影片使用非接觸型驗電筆，僅能檢測到手機充電時有周遭有電場、磁場，但無法檢驗出電磁波值，也無法依此來推論「充電時用手機，全身會產生致癌的電磁波」。
+
+二、專家表示，國際癌症研究單位（IARC）將手機的「射頻電磁場」歸類為2B等級的「可能的致癌物」。但到目前為止，並沒有絕對性的科學證據，能證明「手機產生的電磁波會對人體致癌」。
+
+三、專家提醒，手機充電時，民眾應注意使用電器時的漏電問題。民眾若擔心，可在未充電狀態下使用手機。
+
+網傳影片僅能證明充電時周遭有電場、磁場，此影片不能直接推論「手機充電會產生致癌的電磁波」，因此，網傳影片的推論為「證據不足」訊息。
+</div>                <div class="entity-list-more"><div class="post-date">發布日期：2021-04-12</div><div class="l2c"><a href="/articles/5277">更多</a></div></div>      </div>
+
+      </div>
+  </div>
+  <div class="views-row views-row-5 views-row-odd entity-row">
+    <div class="views-row-inner entity-row-inner">
+        
+  <div class="entity-list-img left-pane">        <a href="/articles/5272"><img typeof="foaf:Image" src="https://tfc-taiwan.org.tw/sites/default/files/styles/r1d33/public/upload/node/field_blog_images/888_00.jpg?itok=0fWnTuzw" width="360" height="270" alt="" /></a>  </div>  
+          <div class="right-pane views-fieldset" data-module="views_fieldsets">
+            <div class="entity-list-tags"><div class="icon-tag 錯誤"><span class="lineage-item lineage-item-level-0"><a href="/articles/category/26/27">錯誤</a></span></div><div class="attr-tag"><a href="/taxonomy/term/479" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">國際</a></div></div>                <h3 class="entity-list-title"><a href="/articles/5272">【錯誤】網傳影片宣稱「世界三大男高音的三個兒子，繼承有望...帶眼鏡的是 Plácido Domingues 的兒子，中間是 Andreas Bocelli 的兒子，另外一個較胖的是 Pavarotti 的翻版」？</a></h3>                <div class="entity-list-body">一、網傳影片的歌手為義大利男子團體「美聲少年」，演出場合為2011年9月11日播出的德國電視節目「ZDF-電視花園」。
+
+二、網傳影片的少年從左到右，依序為皮耶羅・巴羅內，吉安路卡・吉洛貝爾，與伊納吉歐・博施基托，他們的父親並不是世界三大男高音。
+
+傳言宣稱「美聲少年」為「世界三大男高音的三個兒子」，因此，為「錯誤」訊息。
+</div>                <div class="entity-list-more"><div class="post-date">發布日期：2021-04-09</div><div class="l2c"><a href="/articles/5272">更多</a></div></div>      </div>
+
+      </div>
+  </div>
+  <div class="views-row views-row-6 views-row-even entity-row">
+    <div class="views-row-inner entity-row-inner">
+        
+  <div class="entity-list-img left-pane">        <a href="/articles/5269"><img typeof="foaf:Image" src="https://tfc-taiwan.org.tw/sites/default/files/styles/r1d33/public/upload/node/field_blog_images/887_%E9%99%B3%E6%99%82%E4%B8%AD%E4%B8%9F%E8%87%89%E5%88%B0%E9%9F%93%E5%9C%8B.jpg?itok=tk6wUUc7" width="360" height="270" alt="" /></a>  </div>  
+          <div class="right-pane views-fieldset" data-module="views_fieldsets">
+            <div class="entity-list-tags"><div class="icon-tag 錯誤"><span class="lineage-item lineage-item-level-0"><a href="/articles/category/26/27">錯誤</a></span></div><div class="attr-tag"><a href="/taxonomy/term/473" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">政治與政策</a></div></div>                <h3 class="entity-list-title"><a href="/articles/5269">【錯誤】網傳影片稱「陳時中丟臉到韓國新聞」？</a></h3>                <div class="entity-list-body">一、網傳影片所稱的「新聞播報畫面」，是2014年韓國食品公司拍攝的廣告，並非是真實的新聞播報畫面。
+
+二、網傳影片將2014年的廣告，與中央疫情指揮中心指揮官陳時中照片後製成同一畫面。但原始影片與陳時中無關，影片內容也未提到台灣的防疫資訊。
+
+因此，網傳影片稱「陳時中丟臉到韓國新聞」為「錯誤」訊息。
+</div>                <div class="entity-list-more"><div class="post-date">發布日期：2021-04-09</div><div class="l2c"><a href="/articles/5269">更多</a></div></div>      </div>
+
+      </div>
+  </div>
+  <div class="views-row views-row-7 views-row-odd entity-row">
+    <div class="views-row-inner entity-row-inner">
+        
+  <div class="entity-list-img left-pane">        <a href="/articles/5268"><img typeof="foaf:Image" src="https://tfc-taiwan.org.tw/sites/default/files/styles/r1d33/public/upload/node/field_blog_images/886_photo.png?itok=vRQO9nbf" width="360" height="270" alt="" /></a>  </div>  
+          <div class="right-pane views-fieldset" data-module="views_fieldsets">
+            <div class="entity-list-tags"><div class="icon-tag 事實釐清"><span class="lineage-item lineage-item-level-0"><a href="/articles/category/26/42">事實釐清</a></span></div><div class="attr-tag"><a href="/taxonomy/term/474" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">生活</a></div></div>                <h3 class="entity-list-title"><a href="/articles/5268">【事實釐清】網傳「記得用信用卡買各種車票...其實火車、高鐵、台汽客運等大眾運輸，都可以信用卡刷卡購票，持卡人可享上千萬元的旅遊平安險保障」？</a></h3>                <div class="entity-list-body">一、多家銀行有提供以信用卡購買公共運輸工具全額票款，附贈「旅遊平安險」的服務。不過，每家銀行、每張信用卡提供旅遊平安險的承保範圍、理賠金額不同，建議民眾可先閱讀相關條款，了解保險項目。
+
+二、部分傳言附上的「旅遊平安險」整理圖表，來自一家保險分析網站2018年之整理資料，並非最新資訊。
+</div>                <div class="entity-list-more"><div class="post-date">發布日期：2021-04-08</div><div class="l2c"><a href="/articles/5268">更多</a></div></div>      </div>
+
+      </div>
+  </div>
+  <div class="views-row views-row-8 views-row-even entity-row">
+    <div class="views-row-inner entity-row-inner">
+        
+  <div class="entity-list-img left-pane">        <a href="/articles/5267"><img typeof="foaf:Image" src="https://tfc-taiwan.org.tw/sites/default/files/styles/r1d33/public/upload/node/field_blog_images/845_00.jpg?itok=yCUU53YS" width="360" height="270" alt="" /></a>  </div>  
+          <div class="right-pane views-fieldset" data-module="views_fieldsets">
+            <div class="entity-list-tags"><div class="icon-tag 事實釐清"><span class="lineage-item lineage-item-level-0"><a href="/articles/category/26/42">事實釐清</a></span></div><div class="attr-tag"><a href="/taxonomy/term/475" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">健康</a></div></div>                <h3 class="entity-list-title"><a href="/articles/5267">【事實釐清】網傳「不小心碰到銀膠菊...鼻子和肝會產生病變… 接觸到它的葉子或吸入細毛，可能會引發過敏性鼻炎、皮膚潰爛、蜂窩性組織炎、支氣管炎」？</a></h3>                <div class="entity-list-body">一、接觸銀膠菊可能造成接觸性皮膚炎，嚴重可能會皮膚潰爛。皮膚潰爛若未經接受治療又感染細菌，才可能造成蜂窩性組織炎。不會一接觸到銀膠菊，就導致蜂窩性組織炎。
+
+二、銀膠菊的花粉確實易誘發過敏性鼻炎或氣喘。
+
+三、專家指出，國外曾有牛羊食用銀膠菊後產生肝腎病變的案例。不過，台灣目前沒有接觸銀膠菊，造成人體肝腎與鼻子病變的研究或證據。
+
+四、專家建議，若要長時間接觸銀膠菊，可以戴口罩、著長袖衣物和手套。
+</div>                <div class="entity-list-more"><div class="post-date">發布日期：2021-04-08</div><div class="l2c"><a href="/articles/5267">更多</a></div></div>      </div>
+
+      </div>
+  </div>
+  <div class="views-row views-row-9 views-row-odd entity-row">
+    <div class="views-row-inner entity-row-inner">
+        
+  <div class="entity-list-img left-pane">        <a href="/articles/5266"><img typeof="foaf:Image" src="https://tfc-taiwan.org.tw/sites/default/files/styles/r1d33/public/upload/node/field_blog_images/884_00.jpg?itok=pfithZOS" width="360" height="270" alt="" /></a>  </div>  
+          <div class="right-pane views-fieldset" data-module="views_fieldsets">
+            <div class="entity-list-tags"><div class="icon-tag 錯誤"><span class="lineage-item lineage-item-level-0"><a href="/articles/category/26/27">錯誤</a></span></div><div class="attr-tag"><a href="/taxonomy/term/473" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">政治與政策</a></div></div>                <h3 class="entity-list-title"><a href="/articles/5266">【錯誤】網傳越南文章宣稱「台灣警察清晨突襲並逮捕了數百名越南人」?</a></h3>                <div class="entity-list-body">一、網傳文章來自一越南網站，該篇文章並無消息來源，網站也沒有相關資訊，並不是具有可信度的新聞媒體。
+
+二、網傳文章所引述的新聞照片，均挪用自不相關的其他事件。
+
+三、警政署與移民署均表示，近期沒有查獲大規模非法移工的案件。
+
+網傳文章的內容為虛構，照片均挪用自無關的事件，因此，為「錯誤」訊息。
+
+Trung tâm kiểm tra sự thật Đài Loan tuyên bố
+
+Trung tâm kiểm tra sự thật Đài Loan nhận xét rằng các trang web Việt Nam như "tin tức" và "HẢI NGOẠI-...</div>                <div class="entity-list-more"><div class="post-date">發布日期：2021-04-08</div><div class="l2c"><a href="/articles/5266">更多</a></div></div>      </div>
+
+      </div>
+  </div>
+  <div class="views-row views-row-10 views-row-even views-row-last entity-row">
+    <div class="views-row-inner entity-row-inner">
+        
+  <div class="entity-list-img left-pane">        <a href="/articles/5265"><img typeof="foaf:Image" src="https://tfc-taiwan.org.tw/sites/default/files/styles/r1d33/public/upload/node/field_blog_images/883_photo.png?itok=X9vMgRPt" width="360" height="270" alt="" /></a>  </div>  
+          <div class="right-pane views-fieldset" data-module="views_fieldsets">
+            <div class="entity-list-tags"><div class="icon-tag 錯誤"><span class="lineage-item lineage-item-level-0"><a href="/articles/category/26/27">錯誤</a></span></div><div class="attr-tag"><a href="/taxonomy/term/478" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">環境能源</a></div></div>                <h3 class="entity-list-title"><a href="/articles/5265">【錯誤】網傳影片宣稱「它是一種獨特的藥用植物，俗名：『風不動』，有風時不動，無風時反而自己搖動」？</a></h3>                <div class="entity-list-body">一、植物學者指出，影片中的植物屬於蕨類，可能是「小毛蕨」；影片的植物並非「風不動」，風不動屬於「風不動屬」的雙子葉植物。
+
+二、植物學者指出，自然環境下，植物自行擺動的速度非常緩慢，不會如網傳影片中的植物劇烈搖動，而蕨類植物中沒有會自行擺動的種類。
+
+因此，傳言為「錯誤」訊息。
+</div>                <div class="entity-list-more"><div class="post-date">發布日期：2021-04-08</div><div class="l2c"><a href="/articles/5265">更多</a></div></div>      </div>
+
+      </div>
+  </div>
+    </div>
+  
+      <h2 class="element-invisible">頁面</h2><div class="item-list"><ul class="pager"><li class="pager-first first"><a title="到第一頁" href="/articles/report">« 第一頁</a></li>
+<li class="pager-previous"><a title="到上一頁" href="/articles/report">‹ 上一頁</a></li>
+<li class="pager-item"><a title="到第 1 頁" href="/articles/report">1</a></li>
+<li class="pager-current">2</li>
+<li class="pager-item"><a title="到第 3 頁" href="/articles/report?page=2">3</a></li>
+<li class="pager-item"><a title="到第 4 頁" href="/articles/report?page=3">4</a></li>
+<li class="pager-item"><a title="到第 5 頁" href="/articles/report?page=4">5</a></li>
+<li class="pager-item"><a title="到第 6 頁" href="/articles/report?page=5">6</a></li>
+<li class="pager-item"><a title="到第 7 頁" href="/articles/report?page=6">7</a></li>
+<li class="pager-item"><a title="到第 8 頁" href="/articles/report?page=7">8</a></li>
+<li class="pager-item"><a title="到第 9 頁" href="/articles/report?page=8">9</a></li>
+<li class="pager-ellipsis">…</li>
+<li class="pager-next"><a title="到下一頁" href="/articles/report?page=2">下一頁 ›</a></li>
+<li class="pager-last last"><a title="到最後一頁" href="/articles/report?page=90">最後一頁 »</a></li>
+</ul></div>  
+  
+  
+  
+    </div>
+</div>  </div>
+
+  
+  </div>
+      </div>
+    </div>
+    <div class="moscone-flipped-column-content-region moscone-flipped-sidebar panel-panel">
+      <div class="moscone-flipped-column-content-region-inner moscone-flipped-sidebar-inner panel-panel-inner">
+        <div class="panel-pane pane-panels-mini pane-right-pane-all"  id="rp-all" >
+  
+      
+  
+  <div class="pane-content">
+    
+<div class="panel-display boxton clearfix " id="mini-panel-right_pane_all">
+
+  <div class="boxton-container boxton-content boxton-content-region panel-panel">
+    <div class="panel-pane pane-views pane-blk-content"  >
+  
+      
+  
+  <div class="pane-content">
+    <div class="view view-blk-content view-id-blk_content view-display-id-block_1 blk-ct type-blk attr-logo-and-link view-dom-id-c5c8e1234d0427e3fda53dc7979f504a">
+  <div class="view-inner">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last entity-row">
+    <div class="views-row-inner entity-row-inner">
+        
+  <div class="entity-list-img">        <a href="https://ifcncodeofprinciples.poynter.org/profile/taiwan-factcheck-center" target="_blank"><img typeof="foaf:Image" src="https://tfc-taiwan.org.tw/sites/default/files/blkcontent/img-ifcn%403x.png" width="810" height="1002" alt="" /></a>  </div>  
+  <div class="entity-list-link">        <a href="https://tfc-taiwan.org.tw/about/donation" class="btn-link">我要捐款</a>  </div>    </div>
+  </div>
+    </div>
+  
+  
+  
+  
+  
+    </div>
+</div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-node"  >
+  
+        <h2 class="pane-title">
+      熱門文章    </h2>
+    
+  
+  <div class="pane-content">
+      <div id="node-4472" class="node node-hot-articles node-odd ">
+  <div class="node-inner">
+    
+    <div class="node-content">
+      <div class="field field-name-field-hot-articles field-type-entityreference field-label-hidden">
+    <div class="field-items">
+          <div class="field-item even">  <div id="node-5295" class="node node-article node-promoted node-even ">
+  <div class="node-inner">
+          <div class="node-header">
+                            <h2 class="node-title"><a href="/articles/5295">【事實釐清】完整解析「丹麥宣布永久全面停打AZ疫苗的政策考量」</a></h2>
+          <span property="dc:title" content="【事實釐清】完整解析「丹麥宣布永久全面停打AZ疫苗的政策考量」" class="rdf-meta element-hidden"></span>        
+
+        
+        
+                  <div class="submitted">2021-04-15</div>
+        
+              </div> <!-- .node-header -->
+    
+    <div class="node-content">
+      <div class="field field-name-field-front-blog-image field-type-image field-label-hidden">
+    <div class="field-items">
+          <div class="field-item even"><a href="/articles/5295"><img typeof="foaf:Image" src="https://tfc-taiwan.org.tw/sites/default/files/styles/r1d33/public/upload/node/field_blog_images/897_%E4%B8%B9%E9%BA%A5%E5%81%9C%E6%89%93%E7%96%AB%E8%8B%97.png?itok=UjWOq-1Q" width="360" height="270" alt="" /></a></div>
+      </div>
+</div>
+    </div> <!-- .node-content -->
+
+      </div> <!-- .node-inner -->
+</div> <!-- .node-->
+
+</div>
+          <div class="field-item odd">  <div id="node-5283" class="node node-article node-promoted node-odd ">
+  <div class="node-inner">
+          <div class="node-header">
+                            <h2 class="node-title"><a href="/articles/5283">【錯誤】網傳「特好消息！新冠疫情再見了...美國即將有治療新冠病毒的口服液...患有新冠狀病毒者在家口服該藥5天，體內徹底清除了新冠狀病毒」？</a></h2>
+          <span property="dc:title" content="【錯誤】網傳「特好消息！新冠疫情再見了...美國即將有治療新冠病毒的口服液...患有新冠狀病毒者在家口服該藥5天，體內徹底清除了新冠狀病毒」？" class="rdf-meta element-hidden"></span>        
+
+        
+        
+                  <div class="submitted">2021-04-14</div>
+        
+              </div> <!-- .node-header -->
+    
+    <div class="node-content">
+      <div class="field field-name-field-front-blog-image field-type-image field-label-hidden">
+    <div class="field-items">
+          <div class="field-item even"><a href="/articles/5283"><img typeof="foaf:Image" src="https://tfc-taiwan.org.tw/sites/default/files/styles/r1d33/public/upload/node/field_blog_images/892_2_0.jpg?itok=1rKFr72z" width="360" height="270" alt="" /></a></div>
+      </div>
+</div>
+    </div> <!-- .node-content -->
+
+      </div> <!-- .node-inner -->
+</div> <!-- .node-->
+
+</div>
+          <div class="field-item even">  <div id="node-5243" class="node node-article node-promoted node-even ">
+  <div class="node-inner">
+          <div class="node-header">
+                            <h2 class="node-title"><a href="/articles/5243">【學生來闢謠】與其講八卦不如動手查  高雄鳳中學生熱血查核校園「假訊息」</a></h2>
+          <span property="dc:title" content="【學生來闢謠】與其講八卦不如動手查  高雄鳳中學生熱血查核校園「假訊息」" class="rdf-meta element-hidden"></span>        
+
+        
+        
+                  <div class="submitted">2021-04-01</div>
+        
+              </div> <!-- .node-header -->
+    
+    <div class="node-content">
+      <div class="field field-name-field-front-blog-image field-type-image field-label-hidden">
+    <div class="field-items">
+          <div class="field-item even"><a href="/articles/5243"><img typeof="foaf:Image" src="https://tfc-taiwan.org.tw/sites/default/files/styles/r1d33/public/upload/node/field_blog_images/%E9%A6%96%E5%9C%96_1.jpg?itok=NZNlpyUk" width="360" height="270" alt="" /></a></div>
+      </div>
+</div>
+    </div> <!-- .node-content -->
+
+      </div> <!-- .node-inner -->
+</div> <!-- .node-->
+
+</div>
+          <div class="field-item odd">  <div id="node-5283" class="node node-article node-promoted node-odd ">
+  <div class="node-inner">
+          <div class="node-header">
+                            <h2 class="node-title"><a href="/articles/5283">【錯誤】網傳「特好消息！新冠疫情再見了...美國即將有治療新冠病毒的口服液...患有新冠狀病毒者在家口服該藥5天，體內徹底清除了新冠狀病毒」？</a></h2>
+          <span property="dc:title" content="【錯誤】網傳「特好消息！新冠疫情再見了...美國即將有治療新冠病毒的口服液...患有新冠狀病毒者在家口服該藥5天，體內徹底清除了新冠狀病毒」？" class="rdf-meta element-hidden"></span>        
+
+        
+        
+                  <div class="submitted">2021-04-14</div>
+        
+              </div> <!-- .node-header -->
+    
+    <div class="node-content">
+      <div class="field field-name-field-front-blog-image field-type-image field-label-hidden">
+    <div class="field-items">
+          <div class="field-item even"><a href="/articles/5283"><img typeof="foaf:Image" src="https://tfc-taiwan.org.tw/sites/default/files/styles/r1d33/public/upload/node/field_blog_images/892_2_0.jpg?itok=1rKFr72z" width="360" height="270" alt="" /></a></div>
+      </div>
+</div>
+    </div> <!-- .node-content -->
+
+      </div> <!-- .node-inner -->
+</div> <!-- .node-->
+
+</div>
+          <div class="field-item even">  <div id="node-5130" class="node node-article node-promoted node-even ">
+  <div class="node-inner">
+          <div class="node-header">
+                            <h2 class="node-title"><a href="/articles/5130">【部分錯誤】網傳文章「不要再盲目的給貓洗澡了，每一次給貓洗澡，都是在傷害牠」？</a></h2>
+          <span property="dc:title" content="【部分錯誤】網傳文章「不要再盲目的給貓洗澡了，每一次給貓洗澡，都是在傷害牠」？" class="rdf-meta element-hidden"></span>        
+
+        
+        
+                  <div class="submitted">2021-03-08</div>
+        
+              </div> <!-- .node-header -->
+    
+    <div class="node-content">
+      <div class="field field-name-field-front-blog-image field-type-image field-label-hidden">
+    <div class="field-items">
+          <div class="field-item even"><a href="/articles/5130"><img typeof="foaf:Image" src="https://tfc-taiwan.org.tw/sites/default/files/styles/r1d33/public/upload/node/field_blog_images/839_photo.jpg?itok=R40iZNxA" width="360" height="270" alt="" /></a></div>
+      </div>
+</div>
+    </div> <!-- .node-content -->
+
+      </div> <!-- .node-inner -->
+</div> <!-- .node-->
+
+</div>
+          <div class="field-item odd">  <div id="node-5212" class="node node-article node-promoted node-odd ">
+  <div class="node-inner">
+          <div class="node-header">
+                            <h2 class="node-title"><a href="/articles/5212">【錯誤】網傳「近期流傳，台中25日下午2點起將停水23小時」?</a></h2>
+          <span property="dc:title" content="【錯誤】網傳「近期流傳，台中25日下午2點起將停水23小時」?" class="rdf-meta element-hidden"></span>        
+
+        
+        
+                  <div class="submitted">2021-03-24</div>
+        
+              </div> <!-- .node-header -->
+    
+    <div class="node-content">
+      <div class="field field-name-field-front-blog-image field-type-image field-label-hidden">
+    <div class="field-items">
+          <div class="field-item even"><a href="/articles/5212"><img typeof="foaf:Image" src="https://tfc-taiwan.org.tw/sites/default/files/styles/r1d33/public/upload/node/field_blog_images/863_%E4%B8%BB%E5%9C%96.png?itok=fMuZk-Zx" width="360" height="270" alt="" /></a></div>
+      </div>
+</div>
+    </div> <!-- .node-content -->
+
+      </div> <!-- .node-inner -->
+</div> <!-- .node-->
+
+</div>
+          <div class="field-item even">  <div id="node-5163" class="node node-article node-promoted node-even ">
+  <div class="node-inner">
+          <div class="node-header">
+                            <h2 class="node-title"><a href="/articles/5163">【錯誤】網傳訊息稱「曼谷8.5級地震的影片不要打開，立即刪除，是勒索病毒」？</a></h2>
+          <span property="dc:title" content="【錯誤】網傳訊息稱「曼谷8.5級地震的影片不要打開，立即刪除，是勒索病毒」？" class="rdf-meta element-hidden"></span>        
+
+        
+        
+                  <div class="submitted">2021-03-16</div>
+        
+              </div> <!-- .node-header -->
+    
+    <div class="node-content">
+      <div class="field field-name-field-front-blog-image field-type-image field-label-hidden">
+    <div class="field-items">
+          <div class="field-item even"><a href="/articles/5163"><img typeof="foaf:Image" src="https://tfc-taiwan.org.tw/sites/default/files/styles/r1d33/public/upload/node/field_blog_images/851_00.jpg?itok=JGN-sXjK" width="360" height="270" alt="" /></a></div>
+      </div>
+</div>
+    </div> <!-- .node-content -->
+
+      </div> <!-- .node-inner -->
+</div> <!-- .node-->
+
+</div>
+      </div>
+</div>
+    </div> <!-- .node-content -->
+
+      </div> <!-- .node-inner -->
+</div> <!-- .node-->
+
+  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-node"  id="hot-tags" >
+  
+        <h2 class="pane-title">
+      熱門標籤    </h2>
+    
+  
+  <div class="pane-content">
+      <div id="node-4475" class="node node-blkcontent node-odd ">
+  <div class="node-inner">
+    
+    <div class="node-content">
+          </div> <!-- .node-content -->
+
+      </div> <!-- .node-inner -->
+</div> <!-- .node-->
+
+  </div>
+
+  
+  </div>
+  </div>
+
+</div><!-- /.boxton -->
+  </div>
+
+  
+  </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="moscone-container moscone-footer clearfix panel-panel">
+    <div class="moscone-container-inner moscone-footer-inner panel-panel-inner">
+          </div>
+  </div>
+
+</div><!-- /.moscone-flipped -->
+		</div>
+
+  </div> <!-- /block-inner -->
+</div> <!-- /block -->
+  </div>
+              </div> <!-- .content-main-middle -->
+
+                          </div> <!-- .content-main -->
+
+                      </div> <!-- .content-inner -->
+        </div> <!-- .content -->
+
+        
+              </div> <!-- .main-content -->
+
+          </div> <!-- .main-inner -->
+  </main> <!-- .main -->
+
+  
+  
+  <footer class="footer">
+    <div class="footer-inner limiter">
+                <div class="region region-footer">
+    <div id="block-block-43" class="block block-block block-odd clearfix">
+  <div class="block-inner">
+
+            		
+		<div class="block-content" >
+      <div id="footer-info">
+
+<div class="l-pane">Copyright © 2020 台灣事實查核中心 Taiwan FactCheck Center</div>
+<ul class="r-pane">
+  <li class="ico-tel"><span>+886-02-8772-2482</span></li>
+  <li class="ico-mail"><span>public@tfc-taiwan.org.tw</span></li>
+</ul>
+
+</div>		</div>
+
+  </div> <!-- /block-inner -->
+</div> <!-- /block -->
+  </div>
+          </div>
+  </footer> <!-- .footer -->
+  <div id="mobile-header" class="is-mobile Fixed">
+  <div class="mobile-header-inner limiter">
+    <a href="/" title="首頁" rel="home" id="mobile-logo"><img src="https://tfc-taiwan.org.tw/sites/default/files/TFC_LOGO.png" alt="首頁" /></a>
+  </div>
+</div>
+<div id="mobile-nav-toggle-wrapper" class="is-mobile Fixed">
+  <button id="mobile-nav-toggle" class="hamburger hamburger--collapse" type="button" title="主選單">
+     <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+     </span>
+  </button>
+</div>
+<div id="mobile-search-toggle-wrapper" class="is-mobile Fixed">
+  <button id="mobile-search-toggle" class="" data-target="google-cse-results-searchbox-form" type="button" title="搜尋"></button>
+</div>
+<div id="mobile-search" class="is-mobile">
+</div>
+</div> <!-- .page -->
+  <nav id="mobile-nav" class="mobile-mm-nav is-mobile">
+  <div class="mobile-nav-inner">
+    <ul class="menu"><li class="first leaf 查核準則 mid-3640"><a href="/about/principle">查核準則</a></li>
+<li class="leaf 我要申訴 mid-3638"><a href="https://tfc-taiwan.org.tw/appeal">我要申訴</a></li>
+<li class="leaf 查核工具箱 mid-3704"><a href="https://tfc-taiwan.org.tw/topic/4112">查核工具箱</a></li>
+<li class="leaf 關於我們 mid-3636"><a href="/about/purpose">關於我們</a></li>
+<li class="leaf 聯絡我們 mid-3637"><a href="/contact">聯絡我們</a></li>
+<li class="leaf 捐款 mid-3639"><a href="/about/donation">捐款</a></li>
+<li class="last leaf 登入 mid-3688"><a href="/user/login" class="loginout">登入</a></li>
+</ul><ul class="menu"><li class="first leaf 最新查核報告 mid-3703"><a href="https://tfc-taiwan.org.tw/articles/report">最新查核報告</a></li>
+<li class="leaf 政治與政策 mid-3643"><a href="/taxonomy/term/473">政治與政策</a></li>
+<li class="leaf 生活 mid-3644"><a href="/taxonomy/term/474">生活</a></li>
+<li class="leaf 健康 mid-3645"><a href="/taxonomy/term/475">健康</a></li>
+<li class="leaf 科技資安 mid-3646"><a href="/taxonomy/term/476">科技資安</a></li>
+<li class="leaf 環境能源 mid-3648"><a href="/taxonomy/term/478">環境能源</a></li>
+<li class="leaf 國際 mid-3649"><a href="/taxonomy/term/479">國際</a></li>
+<li class="leaf 科學研究 mid-3647"><a href="/taxonomy/term/477">科學研究</a></li>
+<li class="leaf 研究動態 mid-3691"><a href="https://tfc-taiwan.org.tw/articles/category/22/23">研究動態</a></li>
+<li class="leaf 謠言風向球 mid-3681"><a href="/articles/category/242">謠言風向球</a></li>
+<li class="collapsed 專題 mid-3650"><a href="/topics">專題</a></li>
+<li class="last collapsed 其他 mid-3653"><a href="/articles/info">其他</a></li>
+</ul>  </div>
+  <div class="mobile-nav-bottom"></div>
+</nav>
+<div class="overlay-container">
+  <div class="overlay-inner">
+    <div class="overlay-content"></div>
+    <button class="overlay-close" type="button" title="關閉">
+       <span class="label">關閉</span>
+       <span class="icon-close ic-rounded"></span>
+    </button>
+  </div>
+</div>  <script type="text/javascript" src="https://tfc-taiwan.org.tw/sites/all/modules/google_cse/google_cse_results.js?qrst4b"></script>
+<script type="text/javascript" src="https://tfc-taiwan.org.tw/sites/all/modules/addthis/addthis.js?qrst4b"></script>
+  <a class="back-to-top" href="#">回到頁面最上方</a>
+</body>
+</html>

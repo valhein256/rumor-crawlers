@@ -28,15 +28,15 @@ def parsing_work(crawler, rumor_info):
                 fetched = True
 
         if not fetched:
-            posted_item = crawler.parse_rumor_content(rumor_info)
-            rumor_item = RumorModel(id=posted_item['id'],
-                                    clarification=posted_item['clarification'],
-                                    create_date=posted_item['create_date'],
-                                    title=posted_item['title'],
-                                    original_title=posted_item['original_title'],
-                                    rumors=posted_item['rumors'],
-                                    link=posted_item['link'],
-                                    source=posted_item['source'])
+            rumor_content = crawler.parse_rumor_content(rumor_info)
+            rumor_item = RumorModel(id=rumor_content['id'],
+                                    clarification=rumor_content['clarification'],
+                                    create_date=rumor_content['create_date'],
+                                    title=rumor_content['title'],
+                                    original_title=rumor_content['original_title'],
+                                    rumors=rumor_content['rumors'],
+                                    link=rumor_content['link'],
+                                    source=rumor_content['source'])
             logger.info("Add rumor_item with id {}, link {} to rumor ddb table.".format(rumor_item.id, rumor_item.link))
             rumor_item.save()
             return (_NEW_RUMOR, rumor_info)
@@ -53,7 +53,7 @@ def main():
     try:
         cdc = CdcCrawler(setting)
         latest_create_date = fetch_latest_create_date_of_rumor(cdc.source, args.date)
-        rumor_infos = cdc.parse_rumor_links(latest_create_date)
+        rumor_infos = cdc.crawl_rumor_links(latest_create_date)
         rumor_infos = sorted(rumor_infos, key=lambda k: k['date'])
 
         saved_new_rumor = list()

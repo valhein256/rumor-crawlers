@@ -229,44 +229,57 @@ class TfcCrawler():
             logger.error(f"Error: {msg}")
             return None
 
-    def parse_rumor_links(self, date):
+    def crawl_rumor_links(self, date):
         try:
             rumor_infos = []
             done = False
             pn = 0
             rumor_date = None
             while not done:
-                url = f"{self.page_url}?page={pn}"
-                html_content = self.query(url)
-                html_soup = BeautifulSoup(html_content, 'lxml')
-                div_objs = html_soup.find(class_="view-content").find_all(class_="views-row")
-                if div_objs:
-                    for div in div_objs:
-                        rumor_date = extract_rumor_date(div)
-                        if rumor_date:
-                            if datetime.strptime(rumor_date, "%Y-%m-%d") >= date:
-                                rumor_info = dict()
-                                rumor_path = extract_rumor_path(div)
-                                rumor_info["link"] = f"{self.domain}{rumor_path}"
-                                rumor_info["date"] = rumor_date
-                                rumor_info["img"] = extract_rumor_img(div)
-                                rumor_infos.append(rumor_info)
-                            else:
-                                done = True
-                                break
-                        else:
-                            done = True
-                            break
-                    if not done:
-                        pn += 1
-                else:
-                    done = True
+                done, parsed_rumor_infos = self.parse_rumor_links(pn, date)
+                rumor_infos += parsed_rumor_infos
+                pn += 1
             return rumor_infos
 
         except Exception:
             msg = traceback.format_exc()
             logger.error(f"Error: {msg}")
             return []
+
+    def parse_rumor_links(self, pn, date):
+        try:
+            rumor_infos = []
+            done = False
+            rumor_date = None
+            url = f"{self.page_url}?page={pn}"
+            html_content = self.query(url)
+            html_soup = BeautifulSoup(html_content, 'lxml')
+            div_objs = html_soup.find(class_="view-content").find_all(class_="views-row")
+            if div_objs:
+                for div in div_objs:
+                    rumor_date = extract_rumor_date(div)
+                    if rumor_date:
+                        if datetime.strptime(rumor_date, "%Y-%m-%d") >= date:
+                            rumor_info = dict()
+                            rumor_path = extract_rumor_path(div)
+                            rumor_info["link"] = f"{self.domain}{rumor_path}"
+                            rumor_info["date"] = rumor_date
+                            rumor_info["img"] = extract_rumor_img(div)
+                            rumor_infos.append(rumor_info)
+                        else:
+                            done = True
+                            break
+                    else:
+                        done = True
+                        break
+            else:
+                done = True
+            return done, rumor_infos
+
+        except Exception:
+            msg = traceback.format_exc()
+            logger.error(f"Error: {msg}")
+            return True, []
 
     def parse_rumor_content(self, rumor_info):
         try:
@@ -279,7 +292,7 @@ class TfcCrawler():
             title = remove_redundant_word(original_title)
             preface = extract_preface(html_soup, title)
 
-            posted_item = {
+            rumor_content = {
                 "id": gen_id(rumor_info["link"]),
                 "clarification": clarification,
                 "create_date": rumor_info["date"],
@@ -294,8 +307,8 @@ class TfcCrawler():
                 "link": rumor_info["link"],
                 "source": self.source
             }
-            logger.info("TFC rumor item: {}".format(posted_item))
-            return posted_item
+            logger.info("TFC rumor content: {}".format(rumor_content))
+            return rumor_content
 
         except Exception:
             msg = traceback.format_exc()

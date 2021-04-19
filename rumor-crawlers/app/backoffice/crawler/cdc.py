@@ -92,40 +92,54 @@ class CdcCrawler():
             logger.error(f"Error: {msg}")
             return None
 
-    def parse_rumor_links(self, date):
+    def crawl_rumor_links(self, date):
         try:
-            startTime = date.strftime("%Y.%m.%d")
             rumor_infos = []
             done = False
             pn = 1
             while not done:
-                url = f"{self.page_url}?page={pn}&startTime={startTime}"
-                html_content = self.query(url)
-                html_soup = BeautifulSoup(html_content, 'lxml')
-                div_objs = html_soup.find_all('div', attrs={"class": "cbp-item"})
-                if div_objs:
-                    for div in div_objs:
-                        rumor_date = extract_rumor_date(div)
-                        if datetime.strptime(rumor_date, "%Y-%m-%d") >= date:
-                            rumor_info = dict()
-                            rumor_path = extract_rumor_path(div)
-                            rumor_info["link"] = f"{self.domain}{rumor_path}"
-                            rumor_info["date"] = rumor_date
-                            rumor_info["original_title"] = extract_title(div)
-                            rumor_infos.append(rumor_info)
-                        else:
-                            done = True
-                            break
-                    if not done:
-                        pn += 1
-                else:
-                    done = True
+                done, parsed_rumor_infos = self.parse_rumor_links(pn, date)
+                rumor_infos += parsed_rumor_infos
+                pn += 1
             return rumor_infos
 
         except Exception:
             msg = traceback.format_exc()
             logger.error(f"Error: {msg}")
             return []
+
+    def parse_rumor_links(self, pn, date):
+        try:
+            startTime = date.strftime("%Y.%m.%d")
+            rumor_infos = []
+            done = False
+            url = f"{self.page_url}?page={pn}&startTime={startTime}"
+            html_content = self.query(url)
+
+            html_soup = BeautifulSoup(html_content, 'lxml')
+            div_objs = html_soup.find_all('div', attrs={"class": "cbp-item"})
+            if div_objs:
+                for div in div_objs:
+                    rumor_date = extract_rumor_date(div)
+                    if datetime.strptime(rumor_date, "%Y-%m-%d") >= date:
+                        rumor_info = dict()
+                        rumor_path = extract_rumor_path(div)
+                        rumor_info["link"] = f"{self.domain}{rumor_path}"
+                        rumor_info["date"] = rumor_date
+                        rumor_info["original_title"] = extract_title(div)
+                        rumor_infos.append(rumor_info)
+                    else:
+                        done = True
+                        break
+            else:
+                done = True
+
+            return done, rumor_infos
+
+        except Exception:
+            msg = traceback.format_exc()
+            logger.error(f"Error: {msg}")
+            return True, []
 
     def parse_rumor_content(self, rumor_info):
         try:
@@ -135,7 +149,7 @@ class CdcCrawler():
             clarification = extract_clarification(html_soup)
             title = remove_redundant_word(rumor_info["original_title"])
 
-            posted_item = {
+            rumor_content = {
                 "id": gen_id(rumor_info["link"]),
                 "clarification": clarification,
                 "create_date": rumor_info["date"],
@@ -147,8 +161,8 @@ class CdcCrawler():
                 "link": rumor_info["link"],
                 "source": self.source
             }
-            logger.info("CDC rumor item: {}".format(posted_item))
-            return posted_item
+            logger.info("CDC rumor content: {}".format(rumor_content))
+            return rumor_content
 
         except Exception:
             msg = traceback.format_exc()

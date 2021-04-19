@@ -87,7 +87,7 @@ class FdaCrawler():
             logger.error(f"Error: {msg}")
             return None
 
-    def parse_rumor_links(self, date):
+    def crawl_rumor_links(self, date):
         try:
             html_content = self.query(self.page_url)
             html_soup = BeautifulSoup(html_content, 'lxml')
@@ -97,24 +97,8 @@ class FdaCrawler():
             rumor_infos = []
             done = False
             for pn in range(1, max_page_num + 1):
-                url = f"{self.page_url}&pn={pn}"
-                html_content = self.query(url)
-                html_soup = BeautifulSoup(html_content, 'lxml')
-
-                table_obj = html_soup.find('table', attrs={"class": "listTable"})
-                tbody_obj = table_obj.find('tbody')
-                tr_objs = tbody_obj.find_all('tr')
-                for tr in tr_objs:
-                    rumor_date = extract_rumor_date(tr)
-                    if datetime.strptime(rumor_date, "%Y-%m-%d") >= date:
-                        rumor_info = dict()
-                        rumor_path = extract_rumor_path(tr)
-                        rumor_info["link"] = f"{self.rumor_url}/{rumor_path}"
-                        rumor_info["date"] = rumor_date
-                        rumor_infos.append(rumor_info)
-                    else:
-                        done = True
-                        break
+                done, parsed_rumor_infos = self.parse_rumor_links(pn, date)
+                rumor_infos += parsed_rumor_infos
                 if done:
                     break
             return rumor_infos
@@ -123,6 +107,36 @@ class FdaCrawler():
             msg = traceback.format_exc()
             logger.error(f"Error: {msg}")
             return []
+
+    def parse_rumor_links(self, pn, date):
+        try:
+            rumor_infos = []
+            done = False
+            url = f"{self.page_url}&pn={pn}"
+            html_content = self.query(url)
+            html_soup = BeautifulSoup(html_content, 'lxml')
+
+            table_obj = html_soup.find('table', attrs={"class": "listTable"})
+            tbody_obj = table_obj.find('tbody')
+            tr_objs = tbody_obj.find_all('tr')
+            for tr in tr_objs:
+                rumor_date = extract_rumor_date(tr)
+                if datetime.strptime(rumor_date, "%Y-%m-%d") >= date:
+                    rumor_info = dict()
+                    rumor_path = extract_rumor_path(tr)
+                    rumor_info["link"] = f"{self.rumor_url}/{rumor_path}"
+                    rumor_info["date"] = rumor_date
+                    rumor_infos.append(rumor_info)
+                else:
+                    done = True
+                    break
+
+            return done, rumor_infos
+
+        except Exception:
+            msg = traceback.format_exc()
+            logger.error(f"Error: {msg}")
+            return True, []
 
     def parse_rumor_content(self, rumor_info):
         try:
@@ -133,7 +147,7 @@ class FdaCrawler():
             original_title = extract_title(html_soup)
             title = remove_redundant_word(original_title)
 
-            posted_item = {
+            rumor_content = {
                 "id": gen_id(rumor_info["link"]),
                 "clarification": clarification,
                 "create_date": rumor_info["date"],
@@ -145,8 +159,8 @@ class FdaCrawler():
                 "link": rumor_info["link"],
                 "source": self.source
             }
-            logger.info("FDA rumor item: {}".format(posted_item))
-            return posted_item
+            logger.info("FDA rumor content: {}".format(rumor_content))
+            return rumor_content
 
         except Exception:
             msg = traceback.format_exc()

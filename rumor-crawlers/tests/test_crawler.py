@@ -172,12 +172,8 @@ def test_fda_crawler_parse_rumor_links(mocker,
 
 
 def test_fda_crawler_parse_rumor_content(mocker,
-                                        test_fda,
+                                         test_fda,
                                          test_fetch_latest_create_date_of_rumor):
-    expected_date_str = "2021-01-01"
-    latest_create_date = test_fetch_latest_create_date_of_rumor(test_fda.source, expected_date_str)
-    pn = 1
-
     f = open("./tests/sample/fda/rumor_content_html", "r")
     html_content = f.read()
     mocker.patch(

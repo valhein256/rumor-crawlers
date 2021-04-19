@@ -129,6 +129,7 @@ def gen_dates(start_date):
         logger.error(f"Error: {msg}")
         return None
 
+
 class MygopenCrawler():
     def __init__(self, setting):
         self.api = setting.mygopen_api
@@ -150,7 +151,6 @@ class MygopenCrawler():
             msg = traceback.format_exc()
             logger.error(f"Error: {msg}")
             return None
-
 
     def crawl_rumor_links(self, date):
         try:

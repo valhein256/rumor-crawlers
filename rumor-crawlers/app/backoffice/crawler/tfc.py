@@ -234,7 +234,6 @@ class TfcCrawler():
             rumor_infos = []
             done = False
             pn = 0
-            rumor_date = None
             while not done:
                 done, parsed_rumor_infos = self.parse_rumor_links(pn, date)
                 rumor_infos += parsed_rumor_infos

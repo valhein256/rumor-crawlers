@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "crawlers"
+name = "drm-crawlers"
 version = "0.1.0"
 description = ""
 authors = ["LWH"]
@@ -16,7 +16,6 @@ pytest-mock = "^3.5.1"
 lxml = "^4.6.3"
 pydantic = {extras = ["dotenv"], version = "^1.8.1"}
 pynamodb = "^5.0.3"
-fake-useragent = "^0.1.11"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.2"

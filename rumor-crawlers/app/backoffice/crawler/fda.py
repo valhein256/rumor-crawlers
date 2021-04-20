@@ -3,7 +3,6 @@ import requests
 import re
 from datetime import datetime
 from bs4 import BeautifulSoup
-from fake_useragent import UserAgent
 
 from . import remove_redundant_word
 from utils.crawler import gen_id
@@ -75,8 +74,7 @@ class FdaCrawler():
 
     def query(self, url):
         try:
-            user_agent = UserAgent()
-            response = requests.get(url, headers={'user-agent': user_agent.random})
+            response = requests.get(url)
             if response.status_code == 200:
                 return response.text
             else:

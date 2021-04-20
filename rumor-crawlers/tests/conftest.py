@@ -1,9 +1,4 @@
-import sys
-import os
 import pytest
-
-_path = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, _path + '/../app')
 
 from backoffice.crawler.cdc import CdcCrawler
 from backoffice.crawler.fda import FdaCrawler

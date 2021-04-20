@@ -105,7 +105,7 @@ test:
 	@docker run \
 		-v ${PWD}:/opt/app \
 		--rm ${SERVICE}-develop \
-		pytest -v
+		python -m pytest -vv --cov=./ --color=yes ./tests
 
 lint:
 	@docker run \

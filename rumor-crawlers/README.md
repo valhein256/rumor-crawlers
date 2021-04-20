@@ -191,7 +191,7 @@ To crawler content from date
 
 ## Quality Assurance
 
-### Unit Testing (TBD)
+### Unit Testing
 
 ```shell
 $ > make test
@@ -204,7 +204,7 @@ $ > make test
 ```shell
 $ > make devenv
 (In devenv)
-# pipenv install <NEW-PACKAGE>
+# poetry add <NEW-PACKAGE>
 ```
 
 ### Update package

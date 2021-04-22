@@ -40,8 +40,9 @@ pipeline {
                         'origin/production': 'prod',
                     ].get(env.GIT_BRANCH, 'master')
                     env.TAG_IMAGE = "${env.SERVICE}:${env.STAGE}"
-                    env.DEVELOP_IMAGE = "${env.SERVICE}:${env.STAGE}-develop"
+                    env.DATE = sh(returnStdout: true, script: 'date +"%d"').trim().toInteger()
                     env.HOUR = sh(returnStdout: true, script: 'date +"%H"').trim().toInteger()
+                    env.IMAGE_NOT_EXIST = sh (script: "sudo docker images -q ${env.TAG_IMAGE}", returnStdout: true).trim().isEmpty()
                 }
                 sh "printenv"
             }
@@ -62,6 +63,11 @@ pipeline {
                     changeset "pyproject.toml"
                     changeset "poetry.lock"
                     changeset "Jenkinsfile*"
+                    environment name: 'IMAGE_NOT_EXIST', value: 'true'
+                    allOf {
+                        environment name: 'DATE', value: "1"
+                        environment name: 'HOUR', value: "13"
+                    }
                 }
             }
             steps {
@@ -76,10 +82,11 @@ pipeline {
         stage("Run job") {
             steps {
                 script {
+                    sh '''
+                        make config stage=${STAGE}
+                    '''
                     if ( HOUR == 13 ) {
                         sh '''
-                            make config stage=${STAGE}
-
                             sudo docker run \
                             -v ${PWD}:/opt/app \
                             -v /var/log/drmsg/rumor-crawlers:/var/log/drmsg/rumor-crawlers \
@@ -100,8 +107,6 @@ pipeline {
                         '''
                     }
                     sh '''
-                        make config stage=${STAGE}
-
                         sudo docker run \
                         -v ${PWD}:/opt/app \
                         -v /var/log/drmsg/rumor-crawlers:/var/log/drmsg/rumor-crawlers \

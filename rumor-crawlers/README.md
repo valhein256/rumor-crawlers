@@ -42,7 +42,7 @@ To see more detail about cdc, Login local dev environment
 
 ```shell
 # make devnev
-<devenv> # python app/cdc.py -h
+<devenv>:/opt/app# python app/cdc.py -h
 usage: cdc.py [-h] [-d DATE] [-u | --update | --no-update]
 
 optional arguments:
@@ -73,7 +73,7 @@ To see more detail about fda, Login local dev environment
 
 ```shell
 # make devnev
-<devenv> # python app/fda.py -h
+<devenv>:/opt/app# python app/fda.py -h
 usage: fda.py [-h] [-d DATE] [-u | --update | --no-update]
 
 optional arguments:
@@ -104,7 +104,7 @@ To see more detail about mofa, Login local dev environment
 
 ```shell
 # make devnev
-<devenv> # python app/mofa.py -h
+<devenv>:/opt/app# python app/mofa.py -h
 usage: mofa.py [-h] [-d DATE] [-u | --update | --no-update]
 
 optional arguments:
@@ -135,7 +135,7 @@ To see more detail about tfc, Login local dev environment
 
 ```shell
 # make devnev
-<devenv> # python app/tfc.py -h
+<devenv>:/opt/app# python app/tfc.py -h
 usage: tfc.py [-h] [-d DATE] [-u | --update | --no-update]
 
 optional arguments:
@@ -166,7 +166,7 @@ To see more detail about mygopen, Login local dev environment
 
 ```shell
 # make devnev
-<devenv> # python app/mygopen.py -h
+<devenv>:/opt/app# python app/mygopen.py -h
 usage: mygopen.py [-h] [-d DATE] [-u | --update | --no-update]
 
 optional arguments:
@@ -192,9 +192,19 @@ To crawler content from date
 ## Quality Assurance
 
 ### Unit Testing
+To test all case
 
 ```shell
 $ > make test
+```
+
+To test specify case
+
+```shell
+$ > make devenv
+<devenv>:/opt/app# pytest -vv <python-test-case-files>::<python-test-case-functionname>
+Example:
+<devenv>:/opt/app# pytest -vv tests/test_crawler.py::test_mofa_crawler_parse_rumor_content
 ```
 
 ## Add / Update Package
@@ -203,13 +213,11 @@ $ > make test
 
 ```shell
 $ > make devenv
-(In devenv)
-# poetry add <NEW-PACKAGE>
+<devenv>:/opt/app# poetry add <NEW-PACKAGE>
 ```
 
 ### Update package
 
 ```shell
 $ > make update
-
-
+```

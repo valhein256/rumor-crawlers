@@ -1,12 +1,24 @@
 import traceback
+import re
 from utils.logger import logger
 
 
 class CrawlerProp():
 
+    REDUNDANT_RE = [
+        r'，外交部[\s\S]*(說明|如下(:|：))',
+    ]
+
     REDUNDANT = [
         "有關",
+        "外交部嚴正聲明並強烈譴責說明如下：",
+        "外交部澄清如下：",
         "外交部澄清說明如下：",
+        "外交部特澄清說明如下：",
+        "外交部特此澄清說明如下：",
+        "外交部再度鄭重澄清說明如下：",
+        "外交部嚴正澄清此為錯誤消息",
+        "外交部澄清說明如下",
         "外交部深表遺憾",
         "外交部說明如下：",
         "對於若干",
@@ -49,6 +61,9 @@ crawlerProp = CrawlerProp()
 
 def remove_redundant_word(sentence):
     try:
+        for re_str in crawlerProp.REDUNDANT_RE:
+            sentence = re.sub(re_str, "", sentence)
+
         for word in crawlerProp.REDUNDANT:
             sentence = sentence.replace(word, "")
 

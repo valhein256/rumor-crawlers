@@ -1,22 +1,30 @@
-from app.models.aws.ddb.rumor_model import RumorModel
+import sys
+import os
 
-rumors = dict()
-for s in ["cdc", "mofa", "fda", "mygopen", "tfc"]:
-    for rumor in RumorModel.scan(RumorModel.source.startswith(s)):
-        if rumor.source not in rumors:
-            rumors[rumor.source] = 1
-        else:
-            rumors[rumor.source] += 1
+_path = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(_path, '../app'))
 
-print(rumors)
 
-# for s in ["cdc"]:
-#   for rumor in RumorModel.scan(RumorModel.source.startswith(s)):
-#       rumor.delete()
+if __name__ == "__main__":
+    from models.aws.ddb.rumor_model import RumorModel
 
-rumors = list()
-for rumor in RumorModel.scan(RumorModel.rumors == [""]):
-    rumors.append(rumor)
+    rumors = dict()
+    for s in ["cdc", "mofa", "fda", "mygopen", "tfc"]:
+        for rumor in RumorModel.scan(RumorModel.source.startswith(s)):
+            if rumor.source not in rumors:
+                rumors[rumor.source] = 1
+            else:
+                rumors[rumor.source] += 1
 
-for rumor in rumors:
-    print(rumor.id, rumor.link, rumor.tags)
+    print(rumors)
+
+    # for s in ["cdc"]:
+    #   for rumor in RumorModel.scan(RumorModel.source.startswith(s)):
+    #       rumor.delete()
+
+    rumors = list()
+    for rumor in RumorModel.scan(RumorModel.rumors == [""]):
+        rumors.append(rumor)
+
+    for rumor in rumors:
+        print(rumor.id, rumor.link, rumor.tags)

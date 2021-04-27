@@ -1,4 +1,4 @@
-SERVICE := drm-crawlers
+SERVICE := crawlers
 DEFAULT_APP := bin/main.py
 DEFAULT_STAGE := dev
 
@@ -31,10 +31,10 @@ endif
 config:
 ifeq ($(STAGE), prod)
 	@echo "Download config file..."
-	@aws s3 cp s3://drm-prod-builds/drm-rumor-crawlers/${STAGE}/env ./config/env
+	@aws s3 cp s3://<CONFIG_PATH>/<stage>/env ./config/env
 else
 	@echo "Download config file..."
-	@aws s3 cp s3://drm-stg-builds/drm-rumor-crawlers/${STAGE}/env ./config/env
+	@aws s3 cp s3://<CONFIG_PATH>/<stage>/env ./config/env
 endif
 
 build:

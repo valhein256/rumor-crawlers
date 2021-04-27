@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "drm-crawlers"
+name = "crawlers"
 version = "0.1.0"
 description = ""
 authors = ["LWH"]

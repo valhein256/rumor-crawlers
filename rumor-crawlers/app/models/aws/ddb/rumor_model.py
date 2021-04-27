@@ -20,7 +20,7 @@ class SourceCreateDateIndex(GlobalSecondaryIndex):
 class RumorModel(Model):
     class Meta:
         region = setting.region if setting.region else 'ap-northeast-1'
-        table_name = setting.rumor_ddb_table if setting.rumor_ddb_table else 'drm-stg-rumor_source'
+        table_name = setting.rumor_ddb_table if setting.rumor_ddb_table else 'stg-rumor_source'
 
     id = UnicodeAttribute(hash_key=True)
     clarification = UnicodeAttribute(null=True)

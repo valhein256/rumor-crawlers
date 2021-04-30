@@ -26,16 +26,24 @@ else
 	STAGE := $(stage)
 endif
 
-.PHONY: config build launch compose stop run devenv test lint update
+.PHONY: config config-script build launch compose stop run devenv test lint update
 
 config:
 ifeq ($(STAGE), prod)
-	@echo "Download config file..."
-	@aws s3 cp s3://<CONFIG_PATH>/<stage>/env ./config/env
+	@echo "Download prod-config file... use aws-cli to donwload prod-config from s3..."
+	#@aws s3 cp s3://<CONFIG_PATH>/<stage>/env ./config/env
 else
-	@echo "Download config file..."
-	@aws s3 cp s3://<CONFIG_PATH>/<stage>/env ./config/env
+	@echo "Download stg-config file... use aws-cli to donwload stg-config from s3..."
+	#@aws s3 cp s3://<CONFIG_PATH>/<stage>/env ./config/env
 endif
+
+config-script:
+	@docker run \
+		-e STAGE=${STAGE} \
+		-v ${PWD}:/opt/app \
+		-v ${HOME}/.aws:/root/.aws \
+		--rm ${SERVICE} \
+		python ./scripts/config.py
 
 build:
 	@echo "Build docker iamge..."
@@ -74,6 +82,7 @@ ifeq ($(UPDATE), false)
 		-e AWS_SECRET_ACCESS_KEY=$(AWS_SECRET_ACCESS_KEY) \
 		-e AWS_SESSION_TOKEN=$(AWS_SESSION_TOKEN) \
 		-e AWS_SECURITY_TOKE=$(AWS_SECURITY_TOKEN) \
+		-v ${HOME}/.aws:/root/.aws \
 		-v ${PWD}:/opt/app \
 		--rm ${SERVICE} \
 		python ${APP} -d ${DATE}
@@ -84,11 +93,23 @@ else
 		-e AWS_SECRET_ACCESS_KEY=$(AWS_SECRET_ACCESS_KEY) \
 		-e AWS_SESSION_TOKEN=$(AWS_SESSION_TOKEN) \
 		-e AWS_SECURITY_TOKE=$(AWS_SECURITY_TOKEN) \
+		-v ${HOME}/.aws:/root/.aws \
 		-v ${PWD}:/opt/app \
 		--rm ${SERVICE} \
 		python ${APP} -d ${DATE} --update
 endif
-	
+
+script:
+	@docker run \
+		-e STAGE=${STAGE} \
+		-e AWS_ACCESS_KEY_ID=$(AWS_ACCESS_KEY_ID) \
+		-e AWS_SECRET_ACCESS_KEY=$(AWS_SECRET_ACCESS_KEY) \
+		-e AWS_SESSION_TOKEN=$(AWS_SESSION_TOKEN) \
+		-e AWS_SECURITY_TOKE=$(AWS_SECURITY_TOKEN) \
+		-v ${HOME}/.aws:/root/.aws \
+		-v ${PWD}:/opt/app \
+		--rm ${SERVICE} \
+		python ${APP}
 
 devenv:
 	@docker run \
@@ -97,6 +118,7 @@ devenv:
 		-e AWS_SECRET_ACCESS_KEY=$(AWS_SECRET_ACCESS_KEY) \
 		-e AWS_SESSION_TOKEN=$(AWS_SESSION_TOKEN) \
 		-e AWS_SECURITY_TOKE=$(AWS_SECURITY_TOKEN) \
+		-v ${HOME}/.aws:/root/.aws \
 		-v ${PWD}:/opt/app \
 		--rm -it ${SERVICE}-develop \
 		/bin/bash
@@ -106,6 +128,7 @@ test:
 		-v ${PWD}:/opt/app \
 		--rm ${SERVICE}-develop \
 		python -m pytest -vv --cov=./ --color=yes ./tests
+
 
 lint:
 	@docker run \

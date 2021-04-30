@@ -417,3 +417,35 @@ def test_mygopen_crawler_parse_rumor_content(mocker,
     assert rumor_content['image_link'] is not None
     assert rumor_content['link'] is not None
     assert rumor_content['source'] is not None
+
+
+def test_mygopen_crawler_parse_rumor_content_two_rumor(mocker,
+                                                       test_mygopen,
+                                                       test_fetch_latest_create_date_of_rumor):
+
+    test_rumor_info = {
+        'title': '【假訊息】手機放在廚房爆炸的影片？會產生輻射熱爆炸？謠言',
+        'link': 'https://www.mygopen.com/2019/10/phone-explosion-kitchen.html',
+        'date': '2019-10-25'
+    }
+
+    f = open("./tests/sample/mygopen/rumor_content_html_two_rumors", "r")
+    html_content = f.read()
+    mocker.patch(
+        'backoffice.crawler.mygopen.MygopenCrawler.query',
+        return_value=html_content
+    )
+    rumor_content = test_mygopen.parse_rumor_content(test_rumor_info)
+    assert rumor_content['id'] is not None
+    assert rumor_content['clarification'] is not None
+    assert "TEST-" in rumor_content['clarification']
+    assert rumor_content['create_date'] is not None
+    assert rumor_content['title'] is not None
+    assert rumor_content['original_title'] is not None
+    assert rumor_content['rumors'] is not None
+    assert len(rumor_content['rumors']) == 2
+    assert rumor_content['preface'] is not None
+    assert rumor_content['tags'] is not None
+    assert rumor_content['image_link'] is not None
+    assert rumor_content['link'] is not None
+    assert rumor_content['source'] is not None

@@ -2,6 +2,7 @@ from pynamodb.models import Model
 from pynamodb.indexes import GlobalSecondaryIndex, AllProjection
 from pynamodb.attributes import UnicodeAttribute, ListAttribute
 from utils.settings import Settings
+from backoffice.aws.credentials import gen_sts_credentials
 
 
 setting = Settings(_env_file='config/env')
@@ -21,6 +22,11 @@ class RumorModel(Model):
     class Meta:
         region = setting.region if setting.region else 'ap-northeast-1'
         table_name = setting.rumor_ddb_table if setting.rumor_ddb_table else 'stg-rumor_source'
+        if setting.role:
+            credentials = gen_sts_credentials(setting)
+            aws_access_key_id = credentials["AccessKeyId"]
+            aws_secret_access_key = credentials["SecretAccessKey"]
+            aws_session_token = credentials["SessionToken"]
 
     id = UnicodeAttribute(hash_key=True)
     clarification = UnicodeAttribute(null=True)

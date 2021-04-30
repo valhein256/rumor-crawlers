@@ -1,8 +1,11 @@
+from typing import Optional
 from pydantic import BaseSettings
 
 
 class Settings(BaseSettings):
     region: str
+    role: Optional[str] = None
+    session_name: Optional[str] = None
     info_log: str
     warn_log: str
     error_log: str
@@ -47,6 +50,8 @@ class Settings(BaseSettings):
         env_file_encoding = 'utf-8'
         fields = {
             'region': {'env': 'REGION'},
+            'role': {'env': 'ROLE'},
+            'session_name': {'env': 'SESSION_NAME'},
             'info_log': {'env': 'APP_LOG_INFO'},
             'warn_log': {'env': 'APP_LOG_WARN'},
             'error_log': {'env': 'APP_LOG_ERROR'},

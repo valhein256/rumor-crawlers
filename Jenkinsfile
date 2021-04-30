@@ -89,19 +89,19 @@ pipeline {
                         sh '''
                             sudo docker run \
                             -v ${PWD}:/opt/app \
-                            -v /var/log/drmsg/rumor-crawlers:/var/log/drmsg/rumor-crawlers \
+                            -v /var/log/rumor-crawlers:/var/log/rumor-crawlers \
                             --rm ${TAG_IMAGE} \
                             python app/fda.py 
 
                             sudo docker run \
                             -v ${PWD}:/opt/app \
-                            -v /var/log/drmsg/rumor-crawlers:/var/log/drmsg/rumor-crawlers \
+                            -v /var/log/rumor-crawlers:/var/log/rumor-crawlers \
                             --rm ${TAG_IMAGE} \
                             python app/cdc.py 
 
                             sudo docker run \
                             -v ${PWD}:/opt/app \
-                            -v /var/log/drmsg/rumor-crawlers:/var/log/drmsg/rumor-crawlers \
+                            -v /var/log/rumor-crawlers:/var/log/rumor-crawlers \
                             --rm ${TAG_IMAGE} \
                             python app/mofa.py 
                         '''
@@ -109,13 +109,13 @@ pipeline {
                     sh '''
                         sudo docker run \
                         -v ${PWD}:/opt/app \
-                        -v /var/log/drmsg/rumor-crawlers:/var/log/drmsg/rumor-crawlers \
+                        -v /var/log/rumor-crawlers:/var/log/rumor-crawlers \
                         --rm ${TAG_IMAGE} \
                         python app/tfc.py 
 
                         sudo docker run \
                         -v ${PWD}:/opt/app \
-                        -v /var/log/drmsg/rumor-crawlers:/var/log/drmsg/rumor-crawlers \
+                        -v /var/log/rumor-crawlers:/var/log/rumor-crawlers \
                         --rm ${TAG_IMAGE} \
                         python app/mygopen.py 
                     '''

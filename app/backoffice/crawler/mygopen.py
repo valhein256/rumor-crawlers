@@ -33,27 +33,25 @@ def extract_rumor_img(content_soup):
         return None
 
 
-def extract_clarification_and_rumor(content_soup):
+def extract_clarification_and_rumors(content_soup):
     try:
         # clarification and rumor
         obj_list = content_soup.find_all('blockquote')
         clarification_list = []
         clarification = ''
-        rumor_list = []
-        rumor = ''
+        rumors = []
         for tmp_obj in obj_list:
             if tmp_obj.has_attr('class') is False:
                 continue
 
             if ('tr_bq' in tmp_obj['class']):
-                rumor_list.append(tmp_obj.text.strip())
+                rumors.append(tmp_obj.text.strip())
             elif ('yestrue' in tmp_obj['class']) and (clarification == ''):
                 clarification_list.append(tmp_obj.text.strip())
 
         clarification = '|||||'.join(clarification_list)
-        rumor = '|||||'.join(rumor_list)
 
-        return clarification, rumor
+        return clarification, rumors
 
     except Exception:
         msg = traceback.format_exc()
@@ -216,7 +214,7 @@ class MygopenCrawler():
             html_content = self.query(rumor_info["link"])
             html_soup = BeautifulSoup(html_content, 'lxml')
 
-            clarification, rumor = extract_clarification_and_rumor(html_soup)
+            clarification, rumors = extract_clarification_and_rumors(html_soup)
             preface = extract_preface(html_soup)
             tags = extract_tags(html_soup)
             img = extract_rumor_img(html_soup)
@@ -228,9 +226,7 @@ class MygopenCrawler():
                 "create_date": rumor_info["date"],
                 "title": title,
                 "original_title": rumor_info['title'],
-                "rumors": [
-                    rumor,
-                ],
+                "rumors": rumors,
                 "preface": preface,
                 "tags": tags,
                 "image_link": img,

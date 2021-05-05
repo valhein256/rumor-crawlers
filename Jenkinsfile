@@ -14,16 +14,16 @@ pipeline {
         disableConcurrentBuilds()
         ansiColor('xterm')
         timestamps ()
-        office365ConnectorWebhooks([[name: "Office 365",
-                                     url: "<webhook_url>",
-                                     startNotification: false,
-                                     notifySuccess: false,
-                                     notifyAborted: false,
-                                     notifyUnstable: true,
-                                     notifyFailure: true,
-                                     notifyBackToNormal: true,
-                                     notifyRepeatedFailure: false
-        ]])
+        /*office365ConnectorWebhooks([[name: "Office 365",*/
+                                     /*url: "<webhook_url>",*/
+                                     /*startNotification: false,*/
+                                     /*notifySuccess: false,*/
+                                     /*notifyAborted: false,*/
+                                     /*notifyUnstable: true,*/
+                                     /*notifyFailure: true,*/
+                                     /*notifyBackToNormal: true,*/
+                                     /*notifyRepeatedFailure: false*/
+        /*]])*/
     }
 
     triggers {
@@ -84,29 +84,7 @@ pipeline {
                 script {
                     sh '''
                         make config stage=${STAGE}
-                    '''
-                    if ( HOUR == 13 ) {
-                        sh '''
-                            sudo docker run \
-                            -v ${PWD}:/opt/app \
-                            -v /var/log/rumor-crawlers:/var/log/rumor-crawlers \
-                            --rm ${TAG_IMAGE} \
-                            python app/fda.py 
 
-                            sudo docker run \
-                            -v ${PWD}:/opt/app \
-                            -v /var/log/rumor-crawlers:/var/log/rumor-crawlers \
-                            --rm ${TAG_IMAGE} \
-                            python app/cdc.py 
-
-                            sudo docker run \
-                            -v ${PWD}:/opt/app \
-                            -v /var/log/rumor-crawlers:/var/log/rumor-crawlers \
-                            --rm ${TAG_IMAGE} \
-                            python app/mofa.py 
-                        '''
-                    }
-                    sh '''
                         sudo docker run \
                         -v ${PWD}:/opt/app \
                         -v /var/log/rumor-crawlers:/var/log/rumor-crawlers \

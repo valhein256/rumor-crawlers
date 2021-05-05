@@ -1,6 +1,6 @@
 SERVICE := crawlers
 DEFAULT_APP := bin/main.py
-DEFAULT_STAGE := dev
+DEFAULT_STAGE := stg
 
 ifndef app
 	APP := ${DEFAULT_APP}
@@ -26,7 +26,7 @@ else
 	STAGE := $(stage)
 endif
 
-.PHONY: config config-script build launch compose stop run devenv test lint update
+.PHONY: config build script launch compose stop run devenv test lint update
 
 config:
 ifeq ($(STAGE), prod)
@@ -37,22 +37,23 @@ else
 	#@aws s3 cp s3://<CONFIG_PATH>/<stage>/env ./config/env
 endif
 
-config-script:
-	@docker run \
-		-e STAGE=${STAGE} \
-		-v ${PWD}:/opt/app \
-		-v ${HOME}/.aws:/root/.aws \
-		--rm ${SERVICE} \
-		python ./scripts/config.py
-
 build:
 	@echo "Build docker iamge..."
 	@docker build --pull . \
-		--build-arg PROJECT_ENV=dev \
+		--build-arg PROJECT_ENV=${STAGE} \
 		--target release -t ${SERVICE}
 	@docker build . \
-		--build-arg PROJECT_ENV=dev \
+		--build-arg PROJECT_ENV=${STAGE} \
 		--target develop -t ${SERVICE}-develop
+
+script:
+	@docker run \
+		-e STAGE=${STAGE} \
+		-e AWS_PROFILE=${STAGE} \
+		-v ${HOME}/.aws:/root/.aws \
+		-v ${PWD}:/opt/app \
+		--rm ${SERVICE} \
+		/opt/app/scripts/${APP}
 
 launch:
 	@echo "Launch service..."
@@ -98,18 +99,6 @@ else
 		--rm ${SERVICE} \
 		python ${APP} -d ${DATE} --update
 endif
-
-script:
-	@docker run \
-		-e STAGE=${STAGE} \
-		-e AWS_ACCESS_KEY_ID=$(AWS_ACCESS_KEY_ID) \
-		-e AWS_SECRET_ACCESS_KEY=$(AWS_SECRET_ACCESS_KEY) \
-		-e AWS_SESSION_TOKEN=$(AWS_SESSION_TOKEN) \
-		-e AWS_SECURITY_TOKE=$(AWS_SECURITY_TOKEN) \
-		-v ${HOME}/.aws:/root/.aws \
-		-v ${PWD}:/opt/app \
-		--rm ${SERVICE} \
-		python ${APP}
 
 devenv:
 	@docker run \

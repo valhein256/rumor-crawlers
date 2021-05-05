@@ -26,6 +26,7 @@ RUN apt-get update \
         libtiff-dev \
         libavformat-dev \
         libpq-dev \
+        awscli \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /opt/app
@@ -36,10 +37,10 @@ RUN curl -sSL 'https://raw.githubusercontent.com/python-poetry/poetry/master/get
 COPY pyproject.toml ./
 RUN echo "$PROJECT_ENV" \
   && poetry install \
-    $(if [ "$PROJECT_ENV" = 'production' ]; then echo '--no-dev'; fi) \
+    $(if [ "$PROJECT_ENV" = 'prod' ]; then echo '--no-dev'; fi) \
     --no-interaction --no-ansi \
   # Cleaning poetry installation's cache for production:
-  && if [ "$PROJECT_ENV" = 'production' ]; then rm -rf "$POETRY_CACHE_DIR"; fi
+  && if [ "$PROJECT_ENV" = 'prod' ]; then rm -rf "$POETRY_CACHE_DIR"; fi
 
 FROM base AS release
 FROM base AS develop

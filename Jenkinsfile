@@ -1,8 +1,8 @@
 pipeline {
 
-    agent {
-        label 'slave && ubuntu && ap-northeast-1'
-    }
+    /*agent {*/
+        /*label 'slave && ubuntu && ap-northeast-1'*/
+    /*}*/
 
     environment {
         EMAIL_TO = ''
